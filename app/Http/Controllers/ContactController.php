@@ -9,11 +9,8 @@ use Illuminate\Support\Facades\Mail;
 class ContactController extends Controller
 {
 
-
     public function storeContactForm(Request $request)
-
     {
-
         $input = $request->all();
 
         Contact::create($input);
@@ -26,16 +23,15 @@ class ContactController extends Controller
 
             'subject' => $input['subject'],
 
-            'message' => $input['message'],
+            'user_message' => $input['message'],
 
-        ), function ($message) use ($request) {
+        ), function ($text) use ($request) {
 
-            $message->from($request->email);
+            $text->from($request->email);
 
-            $message->to('m.rakhely.viktoria@gmail.com', 'Admin')->subject($request->get('subject'));
-
+            $text->to('m.rakhely.viktoria@gmail.com', 'Admin')->subject($request->get('subject'));
         });
-
 
     }
 }
+

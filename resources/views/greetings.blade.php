@@ -10,9 +10,7 @@
     <meta content="" name="keywords">
 
 
-    <link href="{{asset('import/assets/img/favicon.png')}}">
-    <link href="{{asset('import/assets/img/logo.png')}}" rel="apple-touch-icon">
-
+    <link href="{{asset('import/assets/img/logo.png')}}">
 
     <!-- Google Fonts -->
     <link
@@ -21,14 +19,15 @@
 
     <!-- Vendor CSS Files -->
     <link href="{{asset('import/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
+    <link href="{{asset('import/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
     <link href="{{asset('import/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('import/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
     <link href="{{asset('import/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
+
+    <!-- Main CSS File -->
     <link href="{{asset('import/assets/css/style.css')}}" rel="stylesheet">
-
 
 </head>
 
@@ -38,10 +37,10 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-        <a href="greetings.blade.php" class="logo"><img src="{{asset('import/assets/img/logo.png')}}" alt="" class="img-fluid"></a>
+        <a href="greetings.blade.php" class="logo"><img src="{{asset('import/assets/img/logo.png')}}" alt=""
+                                                        class="img-fluid"></a>
 
-
-            <nav id="navbar" class="navbar">
+        <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                 <li><a class="nav-link scrollto" href="#about">About</a></li>
@@ -67,8 +66,6 @@
                                                                            height="20" width="20"></a>
                 <a href="https://github.com/Rea888"><img src="import/assets/img/github.png" height="20" width="20"
                                                          style="margin-left:1%"></a>
-
-
             </ul>
         </div>
     </div>
@@ -111,9 +108,7 @@
                             developer role. I believe that my background in business management and self-taught
                             programming experience have prepared me well for this position, and I am eager to continue
                             learning and growing in this field.</p>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -127,10 +122,9 @@
             <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
 
-
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <i class="bi bi-briefcase"></i>
+
                             <span>Git</span>
                             <p class="separator">I use Git because it provides powerful version control, allowing me to
                                 keep track of changes to my code over time, collaborate with other developers, track
@@ -144,7 +138,7 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <i class="bi bi-card-checklist"></i>
+
                             <span>AWS</span>
                             <p class="separator">AWS provides a wide range of cloud computing services that allow me to
                                 easily deploy, manage, and scale my applications. With AWS, I can leverage the power of
@@ -157,7 +151,7 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <i class="bi bi-bar-chart"></i>
+
                             <span>CI/CD</span>
                             <p class="separator">CI/CD is an essential practice in modern software development that
                                 allows me to automate my build, test, and deployment processes. By using CI/CD tools
@@ -168,7 +162,7 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <i class="bi bi-binoculars"></i>
+
                             <span>Jenkins</span>
                             <p class="separator">Jenkins is a popular open-source automation server that provides a wide
                                 range of plugins and integrations, allowing me to automate various aspects of my
@@ -179,7 +173,7 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <i class="bi bi-brightness-high"></i>
+
                             <span>SOLID</span>
                             <p class="separator">I use SOLID principles because they promote abstraction through the use
                                 of interfaces and abstract classes, which are best practices in object-oriented design.
@@ -190,7 +184,7 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <i class="bi bi-calendar4-week"></i>
+
                             <span>OOP</span>
                             <p class="separator">Object-Oriented Programming(OOP) allows me to create modular, reusable,
                                 and maintainable code that can be easily extended and adapted over time.</p>
@@ -211,20 +205,14 @@
         <div class="container">
             <div class="section-title text-center">
                 <h2>CV</h2>
-
             </div>
-
         </div>
 
         <div class="row">
-
             <div class="col-lg-12 d-flex justify-content-center">
-
                 <img src="/import/assets/img/Viktoria_Rakhely.jpg" class="img-fluid img-thumbnail">
-
             </div>
         </div>
-
     </div>
 
     </div><!-- End Portfolio Section -->
@@ -285,7 +273,7 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="message" placeholder="Message"
+                                        <textarea class="form-control" name="message" id="message" placeholder="Message"
                                                   required></textarea>
                                     </div>
                                 </div>
@@ -305,6 +293,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

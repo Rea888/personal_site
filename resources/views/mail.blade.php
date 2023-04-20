@@ -1,4 +1,3 @@
-
 <h2>Hey !</h2> <br><br>
 
 
@@ -14,6 +13,6 @@ Email:  {{ $email }}<br>
 
 Subject:  {{ $subject }}<br>
 
-Message:  {!! $subject !!}<br><br>
+Message:  {{ $user_message }}<br><br>
 
 
