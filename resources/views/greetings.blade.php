@@ -258,9 +258,10 @@
                     </div>
 
                     <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="row gy-3">
+                        <form action="{{ route('greetings') }}" method="post" role="form" class="php-email-form">
+                            {{ csrf_field() }}
 
+                            <div class="row gy-3">
                                 <div class="col-lg-6">
                                     <div class="form-group contact-block1">
                                         <input type="text" name="name" class="form-control" id="name"
