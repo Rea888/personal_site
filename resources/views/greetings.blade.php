@@ -9,8 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link href="{{asset('import/assets/img/logo.png')}}">
-    <link rel="icon" type="image/x-icon" href="import/assets/img/logo.png">
+    <link rel="icon" type="image/x-icon" href="{{asset('import/assets/img/logo.png')}}">
 
     <!-- Google Fonts -->
     <link
@@ -38,8 +37,8 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-        <a href="greetings.blade.php" class="logo"><img src="{{asset('import/assets/img/logo.png')}}" alt=""
-                                                        class="img-fluid"></a>
+        <a href="/" class="logo"><img src="{{asset('import/assets/img/logo.png')}}" alt=""
+                                          class="img-fluid"></a>
 
         <nav id="navbar" class="navbar">
             <ul>
@@ -63,9 +62,11 @@
             <p> Junior PHP developer </p>
 
             <ul class="list-unstyled list-social">
-                <a href="https://www.linkedin.com/in/viktoriarakhely"><img src="import/assets/img/linkedIn.png"
-                                                                           height="20" width="20"></a>
-                <a href="https://github.com/Rea888"><img src="import/assets/img/github.png" height="20" width="20"
+                <a href="https://www.linkedin.com/in/viktoriarakhely"><img
+                        src="{{asset('import/assets/img/linkedIn.png')}}"
+                        alt="" height="20" width="20"></a>
+                <a href="https://github.com/Rea888"><img src="{{asset('import/assets/img/github.png')}}" height="20"
+                                                         width="20" alt=""
                                                          style="margin-left:1%"></a>
             </ul>
         </div>
@@ -216,12 +217,12 @@
 
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <img src="/import/assets/img/Viktoria_Rakhely.jpg" class="img-fluid img-thumbnail">
+                <img src="{{asset('/import/assets/img/Viktoria_Rakhely.jpg')}}" alt="" class="img-fluid img-thumbnail">
             </div>
         </div>
     </div>
 
-    </div><!-- End Portfolio Section -->
+    <!-- End Portfolio Section -->
 
     <!-- ======= Journal Section ======= -->
     <div id="journal" class="paddsection">
