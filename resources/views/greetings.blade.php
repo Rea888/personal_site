@@ -9,8 +9,8 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-
     <link href="{{asset('import/assets/img/logo.png')}}">
+    <link rel="icon" type="image/x-icon" href="import/assets/img/logo.png">
 
     <!-- Google Fonts -->
     <link
@@ -23,6 +23,7 @@
     <link href="{{asset('import/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
     <link href="{{asset('import/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
     <link href="{{asset('import/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
 
@@ -118,7 +119,7 @@
     <div id="services">
         <div class="container">
 
-            <h3 style="color: gray; font-family: 'Nunito', sans-serif"><u>Skills</u></h3>
+            <h3><u>Skills</u></h3>
             <div class="services-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
 
@@ -126,13 +127,11 @@
                         <div class="services-block">
 
                             <span>Git</span>
-                            <p class="separator">I use Git because it provides powerful version control, allowing me to
-                                keep track of changes to my code over time, collaborate with other developers, track
-                                down bugs, and roll back changes if something goes wrong. Additionally, Git provides an
-                                excellent backup and recovery system for my code, ensuring that it is always safe and
-                                recoverable. By maintaining a copy of my code on a remote repository, I can easily
-                                recover it if I accidentally delete or overwrite it, and maintain multiple versions of
-                                my code. </p>
+                            <p class="separator">I like using Git because it helps me manage my code changes, work with
+                                other developers, find bugs, and undo changes if I make a mistake. Git also makes sure
+                                my code is safe by letting me save a backup copy on a remote repository, so if I
+                                accidentally mess up my code, I can easily get it back and have different versions of
+                                it. </p>
                         </div>
                     </div><!-- End testimonial item -->
 
@@ -140,11 +139,10 @@
                         <div class="services-block">
 
                             <span>AWS</span>
-                            <p class="separator">AWS provides a wide range of cloud computing services that allow me to
-                                easily deploy, manage, and scale my applications. With AWS, I can leverage the power of
-                                the cloud to build, test, and deploy my applications quickly and efficiently.
-                                Additionally, AWS provides a wide range of tools and services for data storage,
-                                analysis, and security, making it easy to manage all aspects of my application's
+                            <p class="separator">AWS has lots of cloud computing services that
+                                help me deploy, manage, and grow my apps. With AWS, I can use the cloud to create, test,
+                                and launch my apps fast and easily. Plus, AWS has many tools and services for storing
+                                data, analyzing it, and keeping it secure, so I can handle everything about my app's
                                 infrastructure.</p>
                         </div>
                     </div><!-- End testimonial item -->
@@ -164,10 +162,9 @@
                         <div class="services-block">
 
                             <span>Jenkins</span>
-                            <p class="separator">Jenkins is a popular open-source automation server that provides a wide
-                                range of plugins and integrations, allowing me to automate various aspects of my
-                                software development processes, from building and testing code to deploying it to
-                                production.</p>
+                            <p class="separator">Jenkins is a well-known open-source tool for
+                                automation with lots of plugins and integrations. It lets me automate different parts of
+                                my coding process, like building, testing, and even deploying my code to production.</p>
                         </div>
                     </div><!-- End testimonial item -->
 
@@ -175,10 +172,10 @@
                         <div class="services-block">
 
                             <span>SOLID</span>
-                            <p class="separator">I use SOLID principles because they promote abstraction through the use
-                                of interfaces and abstract classes, which are best practices in object-oriented design.
-                                This results in a codebase that is modular, easier to test, maintain, and extend over
-                                time, which ultimately leads to better software quality and developer productivity. </p>
+                            <p class="separator">I follow SOLID principles because they help make code better by using
+                                interfaces and abstract classes in object-oriented design. This makes the code more
+                                modular, easy to test, maintain, and expand later on, which means the software quality
+                                and my productivity as a developer get better too. </p>
                         </div>
                     </div><!-- End testimonial item -->
 
@@ -186,8 +183,10 @@
                         <div class="services-block">
 
                             <span>OOP</span>
-                            <p class="separator">Object-Oriented Programming(OOP) allows me to create modular, reusable,
-                                and maintainable code that can be easily extended and adapted over time.</p>
+                            <p class="separator">I find Object-Oriented Programming (OOP) super useful because it allows
+                                me to arrange my code, so it's clearer and can be used again. It's perfect for dealing
+                                with complicated projects and makes adjusting or upgrading my work a breeze in the
+                                future.</p>
                         </div>
                     </div><!-- End testimonial item -->
 
