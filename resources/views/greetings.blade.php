@@ -125,6 +125,8 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
+                            <img src="{{asset('import/assets/img/git.png')}}" alt=""
+                                 class="img-fluid" height="40" width="40">
 
                             <span>Git</span>
                             <p class="separator">I like using Git because it helps me manage my code changes, work with
@@ -137,7 +139,8 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-
+                            <img src="{{asset('import/assets/img/awsBlack.png')}}" alt=""
+                                 class="img-fluid" height="30" width="30">
                             <span>AWS</span>
                             <p class="separator">AWS has lots of cloud computing services that
                                 help me deploy, manage, and grow my apps. With AWS, I can use the cloud to create, test,
@@ -149,7 +152,8 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-
+                            <img src="{{asset('import/assets/img/cicd.png')}}" alt=""
+                                 class="img-fluid" height="40" width="40">
                             <span>CI/CD</span>
                             <p class="separator">CI/CD is an essential practice in modern software development that
                                 allows me to automate my build, test, and deployment processes. By using CI/CD tools
@@ -160,7 +164,8 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-
+                            <img src="{{asset('import/assets/img/jenkins.png')}}" alt=""
+                                 class="img-fluid" height="60" width="60">
                             <span>Jenkins</span>
                             <p class="separator">Jenkins is a well-known open-source tool for
                                 automation with lots of plugins and integrations. It lets me automate different parts of
@@ -170,7 +175,8 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-
+                            <img src="{{asset('import/assets/img/solid.png')}}" alt=""
+                                 class="img-fluid" height="40" width="40">
                             <span>SOLID</span>
                             <p class="separator">I follow SOLID principles because they help make code better by using
                                 interfaces and abstract classes in object-oriented design. This makes the code more
@@ -181,7 +187,8 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-
+                            <img src="{{asset('import/assets/img/OOP.png')}}" alt=""
+                                 class="img-fluid" height="40" width="40">
                             <span>OOP</span>
                             <p class="separator">I find Object-Oriented Programming (OOP) super useful because it allows
                                 me to arrange my code, so it's clearer and can be used again. It's perfect for dealing
