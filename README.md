@@ -16,5 +16,3 @@ Build steps:
 3.step: make .env file with "given" parameters <br>
 4.step: make a Database, called: personal_site <br>
 5.step: run php artisan migrate <br>
-
-test3 to see hook is triggered
