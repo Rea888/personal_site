@@ -72,6 +72,17 @@
     })
   }
 
+    /**
+     * Download PDF file
+     */
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById('download-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = this.getAttribute('href');
+            window.open(url, '_blank');
+        });
+    });
+
   /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */

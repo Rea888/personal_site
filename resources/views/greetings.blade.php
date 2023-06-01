@@ -220,6 +220,13 @@
                 <img src="{{asset('/import/assets/img/Viktoria_Rakhely.jpg')}}" alt="" class="img-fluid img-thumbnail">
             </div>
         </div>
+
+        <div class="container">
+            <div class="section-title text-center">
+                <p class="separator"> <a id="download-link" href="{{ url('/download-pdf') }}" target="_blank">Download PDF</a></p>
+            </div>
+        </div>
+
     </div>
 
     <!-- End Portfolio Section -->
