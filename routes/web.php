@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,7 @@ Route::get('/', function () {
     return view('greetings');
 });
 
+Route::get('/download-pdf', [PDFController::class, 'downloadPDF']);
+
 Route::post('/', [ContactController::class, 'storeContactForm'])->name('greetings');
+
