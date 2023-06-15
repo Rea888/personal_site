@@ -1,19 +1,39 @@
 (function() {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
 
-  /**
+    const imageElement = document.getElementById('me');
+
+    const fromX = -135;
+    const fromY = 135;
+
+    const originalX = 0;
+    const originalY = 0;
+
+    const maxScrollDistance = Math.sqrt(Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2));
+
+    const movementMultiplier = 2;
+
+
+    function updateImagePosition() {
+
+        const scrollDistance = window.scrollY;
+
+        if (scrollDistance >= maxScrollDistance) {
+            return;
+        }
+
+        const xPos = fromX + (scrollDistance / maxScrollDistance) * movementMultiplier * (originalX - fromX);
+        const yPos = fromY + (scrollDistance / maxScrollDistance) * movementMultiplier * (originalY - fromY);
+
+        imageElement.style.transform = `translate(${xPos}px, ${yPos}px)`;
+    }
+
+    window.addEventListener('scroll', updateImagePosition);
+
+
+
+    /**
    * Easy event listener function
    */
   const on = (type, el, listener, all = false) => {
