@@ -166,29 +166,28 @@
 
 
     document.addEventListener("scroll", checkSlideInVisibilityRightLeft3);
-
     function isElementInViewportRightLeft3(el) {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
             rect.left <= (window.innerWidth || document.documentElement.clientWidth)
         );
+
     }
-
     function checkSlideInVisibilityRightLeft3() {
-        const greetings = document.getElementById("fifth");
 
+        const greetings = document.getElementById("fifth");
         if (isElementInViewportRightLeft3(greetings)) {
             greetings.classList.add("visible");
         }
     }
+
     checkSlideInVisibilityRightLeft3();
 
     /**
      * SidePlanet moving left to right
      */
     document.addEventListener("scroll", checkSlideInVisibilityRightLeftPlanet);
-
     function isElementInViewportRightLeftPlanet(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -197,38 +196,38 @@
         );
     }
     function checkSlideInVisibilityRightLeftPlanet() {
-        const greetings = document.getElementById("planet");
 
+        const greetings = document.getElementById("planet");
         if (isElementInViewportRightLeftPlanet(greetings)) {
             greetings.classList.add("visible");
         }
     }
+
+
+
     checkSlideInVisibilityRightLeftPlanet();
-
-
 
     /**
      * Intro title moving up to down
      */
     document.addEventListener("scroll", checkVisibilityIntro);
-
     function isElementInViewportIntro(el) {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
             rect.left <= (window.innerWidth || document.documentElement.clientWidth)
         );
+
     }
-
     function checkVisibilityIntro() {
-        const greetings = document.getElementById("intro");
 
+        const greetings = document.getElementById("intro");
         if (isElementInViewportIntro(greetings)) {
             greetings.classList.add("visible");
         }
     }
-    checkVisibilityIntro();
 
+    checkVisibilityIntro();
     /**
      * dots
      */
@@ -236,8 +235,8 @@
         const dotCount = 200; // Number of dots to generate
         const container = document.getElementById('portfolio');
         const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
 
+        const containerHeight = container.clientHeight;
         for (let i = 0; i < dotCount; i++) {
             const dot = document.createElement('div');
             dot.className = 'dot';
@@ -245,16 +244,16 @@
             dot.style.top = Math.random() * containerHeight + 'px';
             container.appendChild(dot);
         }
+
     }
-
     function randomizeVisibility() {
-        const dots = document.getElementsByClassName('dot');
 
+        const dots = document.getElementsByClassName('dot');
         for (let dot of dots) {
             // Randomly show or hide each dot independently
             const interval = Math.random() * 3000 + 500; // Random interval between 0.5 and 3.5 seconds
-            dot.style.transitionDuration = interval + 'ms'; // Set the transition duration for each dot
 
+            dot.style.transitionDuration = interval + 'ms'; // Set the transition duration for each dot
             setInterval(() => {
                 dot.style.opacity = 1; // Show the dot
                 setTimeout(() => {
@@ -262,91 +261,89 @@
                 }, interval - 1000); // Start hiding the dot 1 second before the next interval
             }, interval);
         }
-    }
 
+    }
     // Generate dots on page load
+
+
+
     window.addEventListener('load', () => {
         generateDots();
         randomizeVisibility();
     });
-
-
 
     /**
      * Moving cv part1 from bottom to top
      */
 
     document.addEventListener("scroll", checkVisibilityBody);
-
     function isElementInViewportBody(el) {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
             rect.left <= (window.innerWidth || document.documentElement.clientWidth)
         );
+
     }
-
     function checkVisibilityBody() {
-        const greetings = document.getElementById("bodyText1");
 
+        const greetings = document.getElementById("bodyText1");
         if (isElementInViewport(greetings)) {
             greetings.classList.add("visible");
         }
     }
-    checkVisibilityBody();
 
+
+    checkVisibilityBody();
 
     /**
      * Moving cv part2 from bottom to top
      */
 
     document.addEventListener("scroll", checkVisibilityBody2);
-
     function isElementInViewportBody2(el) {
         const rect = el.getBoundingClientRect();
         return (
             rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
             rect.left <= (window.innerWidth || document.documentElement.clientWidth)
         );
+
     }
-
     function checkVisibilityBody2() {
-        const greetings = document.getElementById("bodyText2");
 
+        const greetings = document.getElementById("bodyText2");
         if (isElementInViewport(greetings)) {
             greetings.classList.add("visible");
         }
     }
+
     checkVisibilityBody2();
 
     /**
      * Moving moon right to left
      */
     document.addEventListener("scroll", checkSlideInVisibilityRightLeftMoon);
-
-    function isElementInViewportRightLeftMoon(moonElement, triggerElement) {
+    function isElementInViewportRightLeftMoon(moonElement) {
         const moonRect = moonElement.getBoundingClientRect();
-        const triggerRect = triggerElement.getBoundingClientRect();
-        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
 
-        // Check if the bottom of the triggerElement is at or above the bottom of the viewport
-        // and the moonElement is in the viewport
+        const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
         return (
-            triggerRect.bottom <= windowHeight &&
             moonRect.bottom >= 0 &&
             moonRect.top <= windowHeight
         );
+
     }
-
     function checkSlideInVisibilityRightLeftMoon() {
-        const moonElement = document.getElementById("moon");
-        const triggerElement = document.getElementById("cvBody");
 
-        if (isElementInViewportRightLeftMoon(moonElement, triggerElement)) {
+        const moonElement = document.getElementById("moon");
+        if (isElementInViewportRightLeftMoon(moonElement)) {
             moonElement.classList.add("visible");
         }
     }
+
     checkSlideInVisibilityRightLeftMoon();
+
+
 
     /**
      * Button glowing on touch
@@ -365,8 +362,6 @@
             });
         }
     });
-
-
 
     /**
      * spaceX game
@@ -581,7 +576,6 @@
             window.open(url, '_blank');
         });
     });
-
     /**
      * Easy selector helper function
      */
@@ -592,8 +586,8 @@
         } else {
             return document.querySelector(el)
         }
-    }
 
+    }
     /**
      * Easy event listener function
      */
@@ -606,15 +600,15 @@
                 selectEl.addEventListener(type, listener)
             }
         }
-    }
 
+    }
     /**
      * Easy on scroll event listener
      */
     const onscroll = (el, listener) => {
         el.addEventListener('scroll', listener)
-    }
 
+    }
     /**
      * Navbar links active state on scroll
      */
@@ -633,19 +627,19 @@
         })
     }
     window.addEventListener('load', navbarlinksActive)
-    onscroll(document, navbarlinksActive)
 
+    onscroll(document, navbarlinksActive)
     /**
      * Scrolls to an element with header offset
      */
     const scrollto = (el) => {
         let header = select('#header')
-        let offset = header.offsetHeight
 
+        let offset = header.offsetHeight
         if (!header.classList.contains('header-scrolled')) {
             offset -= 16
-        }
 
+        }
         let elementPos = select(el).offsetTop
         window.scrollTo({
             top: elementPos - offset,
@@ -656,6 +650,7 @@
     /**
      * Toggle .header-scrolled class to #header when page is scrolled
      */
+
     let selectHeader = select('#header')
     if (selectHeader) {
         const headerScrolled = () => {

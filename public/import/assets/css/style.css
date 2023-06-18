@@ -359,6 +359,8 @@ p {
     margin: 0;
     padding: 0;
     line-height: 1.5;
+    position: relative;
+    z-index: 3;
 }
 
 #cont {
@@ -683,7 +685,7 @@ p {
 
 #buttons-container {
     text-align: center;
-    margin-top: 10px; /* Add some margin to separate the buttons from the canvas */
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 830px) {
