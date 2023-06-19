@@ -29,7 +29,7 @@ class ContactController extends Controller
 
             $text->from($request->email);
 
-            $text->to('m.rakhely.viktoria@gmail.com')->subject($request->get('subject'));
+            $text->to('info@viktoriarakhely.eu')->subject($request->get('subject'));
         });
 
     }
