@@ -323,24 +323,28 @@
      * Moving moon right to left
      */
     document.addEventListener("scroll", checkSlideInVisibilityRightLeftMoon);
-    function isElementInViewportRightLeftMoon(moonElement) {
+    function isElementInViewportRightLeftMoon(moonElement, triggerElement) {
         const moonRect = moonElement.getBoundingClientRect();
-
+        const triggerRect = triggerElement.getBoundingClientRect();
         const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+
+        // Check if the bottom of the triggerElement is at or above the bottom of the viewport
+        // and the moonElement is in the viewport
         return (
+            triggerRect.bottom <= windowHeight &&
             moonRect.bottom >= 0 &&
             moonRect.top <= windowHeight
         );
-
     }
-    function checkSlideInVisibilityRightLeftMoon() {
 
+    function checkSlideInVisibilityRightLeftMoon() {
         const moonElement = document.getElementById("moon");
-        if (isElementInViewportRightLeftMoon(moonElement)) {
+        const triggerElement = document.getElementById("cvBody");
+
+        if (isElementInViewportRightLeftMoon(moonElement, triggerElement)) {
             moonElement.classList.add("visible");
         }
     }
-
     checkSlideInVisibilityRightLeftMoon();
 
 
