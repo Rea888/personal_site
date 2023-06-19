@@ -201,12 +201,17 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <img src="{{asset('import/assets/img/jenkins.png')}}" alt=""
-                                 class="img-fluid" height="45" width="45">
-                            <span id="skills">Jenkins</span>
+                            <a href="https://github.com/Rea888/personal_site/blob/master/Jenkinsfile"><img
+                                    src="{{asset('import/assets/img/jenkins.png')}}" alt=""
+                                    class="img-fluid" height="45" width="45"></a>
+                            <a href="https://github.com/Rea888/personal_site/blob/master/Jenkinsfile"><span id="skills">Jenkins</span></a>
                             <p class="separator" id="skills2">Jenkins is a well-known open-source tool for
                                 automation with lots of plugins and integrations. It lets me automate different parts of
-                                my coding process, like building, testing, and even deploying my code to production.</p>
+                                my coding process, like building, testing, and even deploying my code to production.
+                                In this specific <a
+                                    href="https://github.com/Rea888/personal_site/blob/master/Jenkinsfile"
+                                    id="glow">pipeline</a> whenever any changes are merged into the master branch of the
+                                project, an automatic self-build and deployment to the server is triggered.</p>
                         </div>
                     </div><!-- End testimonial item -->
 
@@ -577,7 +582,6 @@
             </div>
         </div>
     </div>
-
 
 
     <!-- ======= Journal Section ======= -->
