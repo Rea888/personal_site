@@ -8,11 +8,11 @@ class PDFController extends Controller
 {
     public function downloadPDF()
     {
-        $file = public_path("import/assets/pdf/viktoria_resume.pdf");
+        $file = public_path("import/assets/pdf/Viktoria_Rakhely.pdf");
         $headers = array(
             'Content-Type: application/pdf',
         );
 
-        return response()->download($file, 'viktoria_resume.pdf', $headers);
+        return response()->download($file, 'Viktoria_Rakhely.pdf', $headers);
     }
 }

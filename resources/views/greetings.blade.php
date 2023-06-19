@@ -349,14 +349,6 @@
                                 <p style="color: #65507e"><b><b>Udemy Courses</b></b></p>
                                 <p style="color: #65507e"><i>2022 - 2023</i></p>
 
-                                <p style="color: #e4d5f7"><u>Dave Hollingworth: PHP for Beginners</u></p>
-                                <p style="color: #e4d5f7">-HTML, HTML Forms, Mixing PHP and HTML<br>
-                                    -Multiple pages in PHP, Validation, OOP, Class Autoloading<br>
-                                    -Databases, PDO, Authentication, Database Relationships<br>
-                                    -Sessions to Log in and Restrict Access, Site Administration<br>
-                                    -Pagination, Uploading Files<br>
-                                    -CSS, Javascript, Sending email<br>
-
                                 <p style="color:  #e4d5f7"><u>Edwin Diaz: PHP with Laravel - Become a Master in
                                         Laravel</u>
                                 </p>
@@ -366,7 +358,15 @@
                                     -Eloquent relationships: One to One, One to many, Many to Many,<br>
                                     Polymorphic relationships<br>
                                     -Uploading files, Log in, Sending email/Api <br>
-                                    -Sessions, Git, Data seeding, Bootstrap <br>
+                                    -Sessions, Git, Data seeding, Bootstrap <br></p>
+
+                                <p style="color: #e4d5f7"><u>Dave Hollingworth: PHP for Beginners</u></p>
+                                <p style="color: #e4d5f7">-HTML, HTML Forms, Mixing PHP and HTML<br>
+                                    -Multiple pages in PHP, Validation, OOP, Class Autoloading<br>
+                                    -Databases, PDO, Authentication, Database Relationships<br>
+                                    -Sessions to Log in and Restrict Access, Site Administration<br>
+                                    -Pagination, Uploading Files<br>
+                                    -CSS, Javascript, Sending email<br>
 
                                 <p style="color: #65507e"><b><b>Udemy Courses</b></b></p>
                                 <p style="color: #65507e"><i>2020 - 2021</i></p>
