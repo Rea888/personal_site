@@ -293,29 +293,27 @@
                 <div class="section-title text-center" id="contactl">
                     <h2 style="color: white">Contacts</h2></div>
 
-                <div class="contact-block1" id="cont">
-
-                    <video autoplay muted loop id="background-video">
-                        <source src="{{asset('import/assets/video/contacto_AdobeExpress(3).mp4')}}" type="video/mp4">
-                    </video>
+                <div class="contact-block1 vibrating-glowing-border" id="cont">
                     <div class="content-wrapper">
                         <div class="row gx-6">
-
                             <div class="col-lg-6">
                                 <div class="about-descr" id="cont1">
 
-                                    <h4 style="color: black"><a href="mailto:info@viktoriarakhely.eu"
-                                                                class="contact"><img
+                                    <h4 style="color: black" class="shaking-text"><a
+                                            href="mailto:info@viktoriarakhely.eu"
+                                            class="contact"><img
                                                 src="{{asset('import/assets/img/envelope.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%"
                                                 class="contact"><b>info@viktoriarakhely.eu</b></a>
                                     </h4>
-                                    <h4 style="color: black"><img src="{{asset('import/assets/img/location.svg')}}"
-                                                                  alt="SVG Image"
-                                                                  style="margin-right: 1%"><b>Trierweiler, Germany</b>
+                                    <h4 style="color: black" class="shaking-text"><img
+                                            src="{{asset('import/assets/img/location.svg')}}"
+                                            alt="SVG Image"
+                                            style="margin-right: 1%"><b>Trierweiler, Germany</b>
                                     </h4>
-                                    <h4 style="color: black"><a href="https://www.linkedin.com/in/viktoriarakhely/"
-                                                                class="contact"><img
+                                    <h4 style="color: black" class="shaking-text"><a
+                                            href="https://www.linkedin.com/in/viktoriarakhely/"
+                                            class="contact"><img
                                                 src="{{asset('import/assets/img/linkedin.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%"><b>linkedin.com/in/viktoriarakhely</b></a></h4>
                                 </div>
@@ -324,13 +322,16 @@
                             <div class="col-lg-6">
                                 <div class="about-descr" id="cont2">
 
-                                    <h4 style="color: black"><img src="{{asset('import/assets/img/phone.svg')}}"
-                                                                  alt="SVG Image"><b>+49 1520 9732046</b></h4>
-                                    <h4 style="color: black"><a href="https://viktoriarakhely.eu/" class="contact"><img
+                                    <h4 style="color: black" class="shaking-text"><img
+                                            src="{{asset('import/assets/img/phone.svg')}}"
+                                            alt="SVG Image"><b>+49 1520 9732046</b></h4>
+                                    <h4 style="color: black" class="shaking-text"><a href="https://viktoriarakhely.eu/"
+                                                                                     class="contact"><img
                                                 src="{{asset('import/assets/img/hand.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%" class="contact"><b>viktoriarakhely.eu</b></a>
                                     </h4>
-                                    <h4 style="color: black"><a href="https://github.com/Rea888" class="contact"><img
+                                    <h4 style="color: black" class="shaking-text"><a href="https://github.com/Rea888"
+                                                                                     class="contact"><img
                                                 src="{{asset('import/assets/img/github.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%"><b>github.com/Rea888</b></a></h4>
                                 </div>

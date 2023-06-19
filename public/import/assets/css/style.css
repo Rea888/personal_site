@@ -231,7 +231,7 @@ p {
     margin-bottom: 10%;
     color: white;
     text-shadow: 2px 2px black;
-    z-index: 3;
+    z-index: 999;
 }
 
 #skills {
@@ -369,31 +369,64 @@ p {
 #cont {
     position: relative;
     padding: 2%;
-    width: 80%;
-    height: 40vh;
+    width: 40%;
+    height: 30vh;
     margin: 0 auto;
     box-sizing: border-box;
     overflow: hidden;
+    border-radius: 50px;
+    border: 1px;
+    background: radial-gradient(circle at center, white, transparent 300%);
+
+
 }
 
-
-.video-container {
+.vibrating-glowing-border {
+    border: 3px solid white;
+    animation: vibrating-glowing-border-animation 0.2s ease-in-out infinite alternate;
     position: relative;
-    width: 100%;
-    height: 100vh; /* You can set this to the height you desire */
-    overflow: hidden;
 }
 
-#background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+
+@keyframes vibrating-glowing-border-animation {
+    0% {
+        box-shadow: 2px 2px 30px rgba(255, 255, 255, 0.8);
+    }
+    25% {
+        box-shadow: -2px -2px 30px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        box-shadow: 2px -2px 30px rgba(255, 255, 255, 0.8);
+    }
+    75% {
+        box-shadow: -2px 2px 30px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        box-shadow: 2px 2px 30px rgba(255, 255, 255, 0.8);
+    }
 }
 
+.shaking-text {
+    animation: shaking-animation 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shaking-animation {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-2px) rotateZ(-2deg);
+    }
+    50% {
+        transform: translateX(2px) rotateZ(2deg);
+    }
+    75% {
+        transform: translateX(-2px) rotateZ(-2deg);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 
 .content-wrapper {
     position: relative;

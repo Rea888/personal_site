@@ -184,6 +184,7 @@
 
     checkSlideInVisibilityRightLeft3();
 
+
     /**
      * SidePlanet moving left to right
      */
