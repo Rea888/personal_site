@@ -224,7 +224,7 @@ p {
 }
 
 #bottomSkills {
-
+    position: relative;
     font-weight: 900;
     padding-left: 2%;
     margin-top: 10%;
