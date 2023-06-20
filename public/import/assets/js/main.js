@@ -1,5 +1,5 @@
-(function() {
-  "use strict";
+(function () {
+    "use strict";
 
     /**
      * Picture moving
@@ -36,7 +36,6 @@
     window.addEventListener('touchmove', updateImagePosition);
 
 
-
     /**
      * Moving border
      */
@@ -52,6 +51,7 @@
             document.removeEventListener("scroll", checkBorderAnimation);
         }
     }
+
     checkBorderAnimation();
 
 
@@ -76,6 +76,7 @@
             greetings.classList.add("visible");
         }
     }
+
     checkVisibility();
 
 
@@ -99,6 +100,7 @@
             greetings.classList.add("visible");
         }
     }
+
     checkVisibilitySlideIn();
 
     document.addEventListener("scroll", checkVisibilitySlideIn2);
@@ -118,6 +120,7 @@
             greetings.classList.add("visible");
         }
     }
+
     checkVisibilitySlideIn2();
 
     /**
@@ -141,6 +144,7 @@
             greetings.classList.add("visible");
         }
     }
+
     checkSlideInVisibilityRightLeft();
 
 
@@ -161,11 +165,12 @@
             greetings.classList.add("visible");
         }
     }
+
     checkSlideInVisibilityRightLeft2();
 
 
-
     document.addEventListener("scroll", checkSlideInVisibilityRightLeft3);
+
     function isElementInViewportRightLeft3(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -174,6 +179,7 @@
         );
 
     }
+
     function checkSlideInVisibilityRightLeft3() {
 
         const greetings = document.getElementById("fifth");
@@ -189,6 +195,7 @@
      * SidePlanet moving left to right
      */
     document.addEventListener("scroll", checkSlideInVisibilityRightLeftPlanet);
+
     function isElementInViewportRightLeftPlanet(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -196,6 +203,7 @@
             rect.left <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
+
     function checkSlideInVisibilityRightLeftPlanet() {
 
         const greetings = document.getElementById("planet");
@@ -205,13 +213,13 @@
     }
 
 
-
     checkSlideInVisibilityRightLeftPlanet();
 
     /**
      * Intro title moving up to down
      */
     document.addEventListener("scroll", checkVisibilityIntro);
+
     function isElementInViewportIntro(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -220,6 +228,7 @@
         );
 
     }
+
     function checkVisibilityIntro() {
 
         const greetings = document.getElementById("intro");
@@ -229,6 +238,7 @@
     }
 
     checkVisibilityIntro();
+
     /**
      * dots
      */
@@ -247,6 +257,7 @@
         }
 
     }
+
     function randomizeVisibility() {
 
         const dots = document.getElementsByClassName('dot');
@@ -264,8 +275,8 @@
         }
 
     }
-    // Generate dots on page load
 
+    // Generate dots on page load
 
 
     window.addEventListener('load', () => {
@@ -278,6 +289,7 @@
      */
 
     document.addEventListener("scroll", checkVisibilityBody);
+
     function isElementInViewportBody(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -286,6 +298,7 @@
         );
 
     }
+
     function checkVisibilityBody() {
 
         const greetings = document.getElementById("bodyText1");
@@ -302,6 +315,7 @@
      */
 
     document.addEventListener("scroll", checkVisibilityBody2);
+
     function isElementInViewportBody2(el) {
         const rect = el.getBoundingClientRect();
         return (
@@ -310,6 +324,7 @@
         );
 
     }
+
     function checkVisibilityBody2() {
 
         const greetings = document.getElementById("bodyText2");
@@ -324,6 +339,7 @@
      * Moving moon right to left
      */
     document.addEventListener("scroll", checkSlideInVisibilityRightLeftMoon);
+
     function isElementInViewportRightLeftMoon(moonElement, triggerElement) {
         const moonRect = moonElement.getBoundingClientRect();
         const triggerRect = triggerElement.getBoundingClientRect();
@@ -346,22 +362,22 @@
             moonElement.classList.add("visible");
         }
     }
-    checkSlideInVisibilityRightLeftMoon();
 
+    checkSlideInVisibilityRightLeftMoon();
 
 
     /**
      * Button glowing on touch
      */
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         // Detect if the device is touch-capable
         if ('ontouchstart' in window) {
             // Add touch event listeners
-            document.querySelectorAll('.glow-on-hover').forEach(function(button) {
-                button.addEventListener('touchstart', function() {
+            document.querySelectorAll('.glow-on-hover').forEach(function (button) {
+                button.addEventListener('touchstart', function () {
                     this.classList.add('touch-device');
                 });
-                button.addEventListener('touchend', function() {
+                button.addEventListener('touchend', function () {
                     this.classList.remove('touch-device');
                 });
             });
@@ -371,7 +387,29 @@
     /**
      * spaceX game
      */
-    document.addEventListener('DOMContentLoaded', function() {
+    var scaleFactor = 1;
+
+    function adjustCanvasSize(canvas) {
+        if (window.innerWidth <= 768) { // For mobile and tablet devices
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            canvas.style.width = window.innerWidth + 'px';
+            canvas.style.height = window.innerHeight + 'px';
+            scaleFactor = Math.min(window.innerWidth / 800, window.innerHeight / 600);
+        } else { // For desktop
+            canvas.width = 800;
+            canvas.height = 600;
+            canvas.style.width = '800px';
+            canvas.style.height = '600px';
+            scaleFactor = 1;
+        }
+    }
+
+    var canvas = document.getElementById('game');
+    adjustCanvasSize(canvas);
+
+
+    document.addEventListener('DOMContentLoaded', function () {
         var startButton = document.getElementById('startGameButton');
         var restartButton = document.getElementById('restartGameButton');
         var canvas = document.getElementById('game');
@@ -413,17 +451,22 @@
 
         function initializeGame() {
             var player = {
-                x: 300,
-                y: 550,
-                width: 40,
-                height: 30,
+                x: canvas.width / 2 - (20 * scaleFactor),
+                y: canvas.height - (50 * scaleFactor),
+                width: 40 * scaleFactor,
+                height: 30 * scaleFactor,
                 bullets: []
             };
 
             var invaders = [];
             for (var i = 0; i < 6; i++) {
                 for (var j = 0; j < 15; j++) {
-                    invaders.push({ x: 40 * j + 10, y: 30 * i + 10, width: 30, height: 20 });
+                    invaders.push({
+                        x: (40 * j + 10) * scaleFactor,
+                        y: (30 * i + 10) * scaleFactor,
+                        width: 30 * scaleFactor,
+                        height: 20 * scaleFactor
+                    });
                 }
             }
 
@@ -444,6 +487,7 @@
                 e.preventDefault();
             }, false);
 
+
             // For mouse controls on desktop
             canvas.addEventListener('mousemove', function(e) {
                 var nextX = e.clientX - canvas.offsetLeft - player.width / 2;
@@ -456,8 +500,9 @@
                 player.x = nextX;
             });
 
-            canvas.addEventListener('click', function(e) {
-                player.bullets.push({ x: player.x + player.width / 2, y: player.y, speed: 5 });
+
+            canvas.addEventListener('click', function (e) {
+                player.bullets.push({x: player.x + player.width / 2, y: player.y, speed: 5});
             });
 
             function update() {
@@ -516,7 +561,7 @@
                 playerImage.src = 'import/assets/img/starShip.png';
 
                 // Render player using the image
-                    ctx.drawImage(playerImage, player.x, player.y, player.width, player.height);
+                ctx.drawImage(playerImage, player.x, player.y, player.width, player.height);
 
 
                 // Render invaders
@@ -556,7 +601,7 @@
             update();
         }
 
-        startButton.addEventListener('click', function() {
+        startButton.addEventListener('click', function () {
             generateStars();
             canvas.style.display = 'block';
             startButton.style.display = 'none';
@@ -564,7 +609,7 @@
             initializeGame();
         });
 
-        restartButton.addEventListener('click', function() {
+        restartButton.addEventListener('click', function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             generateStars();
             initializeGame();
@@ -575,7 +620,7 @@
      * Download PDF file
      */
     document.addEventListener('DOMContentLoaded', (event) => {
-        document.getElementById('download-link').addEventListener('click', function(e) {
+        document.getElementById('download-link').addEventListener('click', function (e) {
             e.preventDefault();
             var url = this.getAttribute('href');
             window.open(url, '_blank');
@@ -688,7 +733,7 @@
     /**
      * Mobile nav toggle
      */
-    on('click', '.mobile-nav-toggle', function(e) {
+    on('click', '.mobile-nav-toggle', function (e) {
         select('#navbar').classList.toggle('navbar-mobile')
         this.classList.toggle('bi-list')
         this.classList.toggle('bi-x')
@@ -697,7 +742,7 @@
     /**
      * Mobile nav dropdowns activate
      */
-    on('click', '.navbar .dropdown > a', function(e) {
+    on('click', '.navbar .dropdown > a', function (e) {
         if (select('#navbar').classList.contains('navbar-mobile')) {
             e.preventDefault()
             this.nextElementSibling.classList.toggle('dropdown-active')
@@ -707,7 +752,7 @@
     /**
      * Scrool with ofset on links with a class name .scrollto
      */
-    on('click', '.scrollto', function(e) {
+    on('click', '.scrollto', function (e) {
         if (select(this.hash)) {
             e.preventDefault()
 
@@ -794,9 +839,9 @@
 
             let portfolioFilters = select('#portfolio-flters li', true);
 
-            on('click', '#portfolio-flters li', function(e) {
+            on('click', '#portfolio-flters li', function (e) {
                 e.preventDefault();
-                portfolioFilters.forEach(function(el) {
+                portfolioFilters.forEach(function (el) {
                     el.classList.remove('filter-active');
                 });
                 this.classList.add('filter-active');
