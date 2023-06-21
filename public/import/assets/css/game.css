@@ -23,7 +23,7 @@ canvas {
 #startButton {
     position: absolute; /* Changed to absolute */
     z-index: 10; /* Keep it above the canvas */
-    bottom: 10px; /* Position it at the bottom of the container */
+    bottom: 20px; /* Position it at the bottom of the container */
     left: 50%; /* Center it horizontally */
     transform: translateX(-50%); /* Adjust for the button's width */
     padding: 10px 20px; /* Give it some padding */

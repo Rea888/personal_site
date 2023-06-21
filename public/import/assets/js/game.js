@@ -164,7 +164,7 @@
                 var maxHeight = canvas.height - player.height;
 
                 for (var i = 0; i < invaders.length; i++) {
-                    invaders[i].x += invaderSpeed * invaderDirection;
+                    invaders[i].x += invaderDirection * invaderSpeed;
 
                     if (invaders[i].x <= 0 || invaders[i].x + invaders[i].width >= canvas.width) {
                         hitWall = true;
@@ -174,18 +174,12 @@
                         renderGameOver();
                         return;
                     }
-
                 }
 
 
                 // Check for win condition
                 if (invaders.length === 0) {
-                    renderWinningMessage()
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    ctx.fillStyle = '#602a70';
-                    ctx.font = `${canvas.width / 10}px Orbitron`;
-                    ctx.textAlign = 'center';
-                    ctx.fillText('You won!', canvas.width / 2, canvas.height / 2);
+                    renderWinningMessage();
 
                     startButton.innerText = 'Restart';
                     startButton.style.display = 'block';

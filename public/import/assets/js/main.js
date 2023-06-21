@@ -345,8 +345,6 @@
         const triggerRect = triggerElement.getBoundingClientRect();
         const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
 
-        // Check if the bottom of the triggerElement is at or above the bottom of the viewport
-        // and the moonElement is in the viewport
         return (
             triggerRect.bottom <= windowHeight &&
             moonRect.bottom >= 0 &&
@@ -397,7 +395,7 @@
             canvas.style.width = window.innerWidth + 'px';
             canvas.style.height = window.innerHeight + 'px';
             scaleFactor = Math.min(window.innerWidth / 800, window.innerHeight / 600);
-        } else { // For desktop
+        } else {
             canvas.width = 800;
             canvas.height = 600;
             canvas.style.width = '800px';
@@ -433,8 +431,8 @@
 
         function updateStars() {
             for (let star of stars) {
-                star.y += star.speed; // Change this line
-                if (star.y > canvas.height) { // And this line
+                star.y += star.speed;
+                if (star.y > canvas.height) {
                     star.y = 0;
                     star.x = Math.random() * canvas.width;
                     star.size = Math.random() * 2;
@@ -475,11 +473,9 @@
             var invaderDirection = 1;
 
 
-
-            // For mouse controls on desktop
             canvas.addEventListener('mousemove', function (e) {
                 var nextX = e.clientX - canvas.offsetLeft - player.width / 2;
-                // Constrain the player's x position
+
                 if (nextX < 0) {
                     nextX = 0;
                 } else if (nextX > canvas.width - player.width) {
