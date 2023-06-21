@@ -263,14 +263,14 @@
         const dots = document.getElementsByClassName('dot');
         for (let dot of dots) {
             // Randomly show or hide each dot independently
-            const interval = Math.random() * 3000 + 500; // Random interval between 0.5 and 3.5 seconds
+            const interval = Math.random() * 3000 + 500;
 
-            dot.style.transitionDuration = interval + 'ms'; // Set the transition duration for each dot
+            dot.style.transitionDuration = interval + 'ms';
             setInterval(() => {
-                dot.style.opacity = 1; // Show the dot
+                dot.style.opacity = 1;
                 setTimeout(() => {
-                    dot.style.opacity = 0; // Hide the dot after a delay
-                }, interval - 1000); // Start hiding the dot 1 second before the next interval
+                    dot.style.opacity = 0;
+                }, interval - 1000);
             }, interval);
         }
 
@@ -389,7 +389,7 @@
     var scaleFactor = 1;
 
     function adjustCanvasSize(canvas) {
-        if (window.innerWidth <= 768) { // For mobile and tablet devices
+        if (window.innerWidth <= 768) {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             canvas.style.width = window.innerWidth + 'px';
@@ -797,6 +797,7 @@
             delay: 5000,
             disableOnInteraction: false
         },
+
         slidesPerView: 'auto',
         pagination: {
             el: '.swiper-pagination',

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
     <title>Game</title>
     <!-- Include your CSS here -->
     <link rel="stylesheet" href="{{asset('import/assets/css/game.css')}}">
@@ -25,6 +26,6 @@
     </div>
 </div>
 
-<script src="{{asset('import/assets/js/game.js')}}"></script>
+<script src="{{asset('import/assets/js_mini/game.min.js')}}"></script>
 </body>
 </html>

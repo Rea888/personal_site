@@ -443,8 +443,7 @@
                                     to handle large volumes of data, making it suitable for analyzing and visualizing
                                     weather
                                     patterns and trends.<br>
-                                    <a href="https://github.com/Rea888/planetSeeker"><u>Link:
-                                            https://github.com/Rea888/planetSeeker</u></a>
+                                    <a href="https://github.com/Rea888/planetSeeker"><u>Link: planetSeeker</u></a>
                                 </p>
                             </div>
 
@@ -469,7 +468,7 @@
                                     <a href="https://github.com/Rea888/personal_site"><u>Link: personal_site</u></a></p>
 
                                 <p style="color: #65507e"><b><b>Christmas escape room</b></b></p>
-                                <p style="color: #65507e">The Christmas-themed activity, inspired by the renowned
+                                <p style="color: #e4d5f7">The Christmas-themed activity, inspired by the renowned
                                     Cicada3301
                                     event, offers
                                     participants
@@ -681,7 +680,7 @@
 <script src="{{asset('import/assets/vendor/php-email-form/validate.js')}}"></script>
 
 <!-- Template Main JS File -->
-<script src="{{asset('import/assets/js/main.js')}}"></script>
+<script src="{{asset('import/assets/js_mini/main.min.js')}}"></script>
 
 
 </body>

@@ -14,30 +14,22 @@
         var invaderImage = new Image();
         var imagesLoaded = 0;
 
-        // Load images and then initialize the game
-        playerImage.onload = function () {
-            imagesLoaded++;
-            if (imagesLoaded === 2) {
-                startButton.addEventListener('click', function () {
-                    startButton.style.display = 'none';
-                    initializeGame();
-                });
-            }
-        };
-
-        invaderImage.onload = function () {
-            imagesLoaded++;
-            if (imagesLoaded === 2) {
-                startButton.addEventListener('click', function () {
-                    startButton.style.display = 'none';
-                    initializeGame();
-                });
-            }
-        };
+        playerImage.onload = imageLoaded;
+        invaderImage.onload = imageLoaded;
 
         playerImage.src = 'import/assets/img/starShip.png';
         invaderImage.src = 'import/assets/img/invader1.png';
 
+        // Load images and then initialize the game
+        function imageLoaded() {
+            imagesLoaded++;
+            if (imagesLoaded === 2) {
+                startButton.addEventListener('click', function () {
+                    startButton.style.display = 'none';
+                    initializeGame();
+                });
+            }
+        }
 
         function adjustCanvasSize() {
             canvas.width = window.innerWidth;
@@ -51,10 +43,7 @@
         }
 
         window.addEventListener('resize', adjustCanvasSize);
-        window.addEventListener('orientationchange', function () {
-            adjustCanvasSize();
-            initializeGame();
-        });
+
 
         function generateStars() {
             stars = [];
@@ -90,20 +79,23 @@
         }
 
         function initializeGame() {
+            // Lock screen orientation to portrait mode
+            if (screen.orientation && screen.orientation.lock) {
+                screen.orientation.lock('portrait').catch(function (error) {
+                    // Handle the error
+                    console.error('Could not lock screen orientation:', error);
+                });
+            }
+
             gameRunning = true;
             adjustCanvasSize();
             generateStars();
 
             player = {
-                x: canvas.width / 2,
-                y: canvas.height - 40,
-                width: 30,
-                height: 30,
-                bullets: []
+                x: canvas.width / 2, y: canvas.height - 40, width: 30, height: 30, bullets: []
             };
 
             var invaders = [];
-
 
             var isLandscape = window.innerWidth > window.innerHeight;
 
@@ -200,8 +192,7 @@
 
                     for (var j = invaders.length - 1; j >= 0; j--) {
                         var invader = invaders[j];
-                        if (b.x > invader.x && b.x < invader.x + invader.width &&
-                            b.y > invader.y && b.y < invader.y + invader.height) {
+                        if (b.x > invader.x && b.x < invader.x + invader.width && b.y > invader.y && b.y < invader.y + invader.height) {
                             invaders.splice(j, 1);
                             player.bullets.splice(i, 1);
                             break;
@@ -218,7 +209,6 @@
                     requestAnimationFrame(update);
                 }
             }
-
 
             function render() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -237,8 +227,6 @@
                     var bullet = player.bullets[i];
                     ctx.fillRect(bullet.x, bullet.y, 2, 10);
                 }
-
-
             }
 
             function renderGameOver() {
@@ -284,11 +272,6 @@
             e.preventDefault();
         }, false);
 
-
-        startButton.addEventListener('click', function () {
-            startButton.style.display = 'none';
-            initializeGame();
-        })
 
     });
 

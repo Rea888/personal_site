@@ -1,11 +1,18 @@
 html, body {
-    height: 100vh;
+
     margin: 0;
     padding: 0;
     overflow: hidden;
     background: #111;
 
 }
+
+body, html, canvas {
+
+    max-width: 100vh;
+    margin: 0 auto;
+}
+
 
 #container {
     position: relative; /* Changed to relative */
