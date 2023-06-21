@@ -3,12 +3,13 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background: #111;
 
 }
 
 #container {
     position: relative; /* Changed to relative */
-    height: 100vh;
+    height: 90vh;
     width: 100vw; /* Added 100% of the viewport width */
     overflow: hidden;
 
