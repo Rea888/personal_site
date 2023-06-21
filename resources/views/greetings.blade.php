@@ -61,7 +61,7 @@
     <div class="container-fluid">
 
         <canvas id="particle-canvas"></canvas>
-        <script src="{{asset('import/assets/js_mini/homeScript.min.js/homeScript.js')}}"></script>
+        <script src="{{asset('import/assets/js_mini/homeScript.min.js')}}"></script>
         <div class="homeIntro">
             <p class="homeText">I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></p>
             <p class="homeJ"> Junior PHP developer </p>
