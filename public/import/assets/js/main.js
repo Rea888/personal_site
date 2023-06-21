@@ -384,6 +384,7 @@
         }
     });
 
+
     /**
      * spaceX game
      */
@@ -473,23 +474,10 @@
             var invaderSpeed = 1;
             var invaderDirection = 1;
 
-            // For touch controls on mobile devices
-            canvas.addEventListener('touchmove', function(e) {
-                var touch = e.touches[0];
-                var nextX = touch.clientX - canvas.offsetLeft - player.width / 2;
-                // Constrain the player's x position
-                if (nextX < 0) {
-                    nextX = 0;
-                } else if (nextX > canvas.width - player.width) {
-                    nextX = canvas.width - player.width;
-                }
-                player.x = nextX;
-                e.preventDefault();
-            }, false);
 
 
             // For mouse controls on desktop
-            canvas.addEventListener('mousemove', function(e) {
+            canvas.addEventListener('mousemove', function (e) {
                 var nextX = e.clientX - canvas.offsetLeft - player.width / 2;
                 // Constrain the player's x position
                 if (nextX < 0) {
@@ -602,11 +590,18 @@
         }
 
         startButton.addEventListener('click', function () {
-            generateStars();
-            canvas.style.display = 'block';
-            startButton.style.display = 'none';
-            restartButton.style.display = 'block';
-            initializeGame();
+
+
+            if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // If on mobile or tablet, redirect to the game page
+                window.location.href = 'game';
+            } else {
+                generateStars();
+                canvas.style.display = 'block';
+                startButton.style.display = 'none';
+                restartButton.style.display = 'block';
+                initializeGame();
+            }
         });
 
         restartButton.addEventListener('click', function () {
@@ -614,7 +609,9 @@
             generateStars();
             initializeGame();
         });
+
     });
+
 
     /**
      * Download PDF file

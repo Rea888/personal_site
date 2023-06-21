@@ -30,6 +30,7 @@
     <!-- Main CSS File -->
     <link href="{{asset('import/assets/css/style.css')}}" rel="stylesheet">
 
+
 </head>
 
 <body>
@@ -290,28 +291,27 @@
                             within the technology community.</font></p>
                 </div>
 
-                <div class="section-title text-center" id="contactl">
-                    <h2 style="color: white">Contacts</h2></div>
 
-                <div class="contact-block1 vibrating-glowing-border" id="cont">
+                <div class="contact-block1" id="cont">
                     <div class="content-wrapper">
                         <div class="row gx-6">
+                            <h3 class="contactLine" style="color: white">Contacts</h3>
                             <div class="col-lg-6">
                                 <div class="about-descr" id="cont1">
 
-                                    <h4 style="color: black" class="shaking-text"><a
+                                    <h4 style="color: white" class="first_line_c"><a
                                             href="mailto:info@viktoriarakhely.eu"
                                             class="contact"><img
                                                 src="{{asset('import/assets/img/envelope.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%"
                                                 class="contact"><b>info@viktoriarakhely.eu</b></a>
                                     </h4>
-                                    <h4 style="color: black" class="shaking-text"><img
+                                    <h4 style="color: white" class="second_line_c"><img
                                             src="{{asset('import/assets/img/location.svg')}}"
                                             alt="SVG Image"
                                             style="margin-right: 1%"><b>Trierweiler, Germany</b>
                                     </h4>
-                                    <h4 style="color: black" class="shaking-text"><a
+                                    <h4 style="color: black" class="third_line_c"><a
                                             href="https://www.linkedin.com/in/viktoriarakhely/"
                                             class="contact"><img
                                                 src="{{asset('import/assets/img/linkedin.svg')}}" alt="SVG Image"
@@ -322,15 +322,15 @@
                             <div class="col-lg-6">
                                 <div class="about-descr" id="cont2">
 
-                                    <h4 style="color: black" class="shaking-text"><img
+                                    <h4 style="color: white" class="first_line_c"><img
                                             src="{{asset('import/assets/img/phone.svg')}}"
                                             alt="SVG Image"><b>+49 1520 9732046</b></h4>
-                                    <h4 style="color: black" class="shaking-text"><a href="https://viktoriarakhely.eu/"
-                                                                                     class="contact"><img
+                                    <h4 style="color: black" class="second_line_c"><a href="https://viktoriarakhely.eu/"
+                                                                                      class="contact"><img
                                                 src="{{asset('import/assets/img/hand.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%" class="contact"><b>viktoriarakhely.eu</b></a>
                                     </h4>
-                                    <h4 style="color: black" class="shaking-text"><a href="https://github.com/Rea888"
+                                    <h4 style="color: black" class="third_line_c"><a href="https://github.com/Rea888"
                                                                                      class="contact"><img
                                                 src="{{asset('import/assets/img/github.svg')}}" alt="SVG Image"
                                                 style="margin-right: 1%"><b>github.com/Rea888</b></a></h4>
@@ -398,16 +398,15 @@
                                     <a href="https://github.com/Rea888/planetSeeker/tree/master/app/Service"
                                        class="glow-on-hover">OOP</a>
                                     <a href="https://github.com/Rea888/planetSeeker/blob/master/app/ApiClient/Meteo/AbstractMeteoDataMapper.php"
-                                       class="glow-on-hover">SOLID</a>
-                                    <a href="https://github.com/Rea888/" class="glow-on-hover">Git</a></p>
-                                <p id="glowSkill"><a href="https://github.com/Rea888/myfirstproject/tree/master"
-                                                     class="glow-on-hover">Java</a>
+                                       class="glow-on-hover">SOLID</a><br class="brCv">
+                                    <a href="https://github.com/Rea888/" class="glow-on-hover">Git</a>
+                                    <a href="https://github.com/Rea888/myfirstproject/tree/master"
+                                       class="glow-on-hover">Java</a>
                                     <a href="https://github.com/Rea888/personal_site" class="glow-on-hover">Docker</a>
                                     <a href="https://github.com/Rea888/personal_site" class="glow-on-hover">Jenkins</a>
-                                </p>
-                                <p id="glowSkill"><a
-                                        href="https://github.com/Rea888/personal_site/tree/master/public/import/assets/css"
-                                        class="glow-on-hover">CSS</a>
+
+                                    <a href="https://github.com/Rea888/personal_site/tree/master/public/import/assets/css"
+                                       class="glow-on-hover">CSS</a><br class="brCv">
                                     <a href="https://github.com/Rea888/personal_site/tree/master/public/import/assets/js"
                                        class="glow-on-hover">JavaScript</a>
                                     <a href="https://github.com/Rea888/personal_site/blob/master/resources/views/greetings.blade.php"
@@ -467,8 +466,7 @@
                                     project and deploy it onto the server. This ensures a seamless and efficient
                                     workflow,
                                     allowing for continuous deployment of updates to the personal site.<br>
-                                    <a href="https://github.com/Rea888/personal_site"><u>Link:
-                                            https://github.com/Rea888/personal_site</u></a></p>
+                                    <a href="https://github.com/Rea888/personal_site"><u>Link: personal_site</u></a></p>
 
                                 <p style="color: #65507e"><b><b>Christmas escape room</b></b></p>
                                 <p style="color: #65507e">The Christmas-themed activity, inspired by the renowned
@@ -481,8 +479,7 @@
                                     frameworks,
                                     along with Bootstrap for an appealing user interface. It incorporates email sending
                                     functionality and leverages MySQL for storing user data. <br>
-                                    <a href="https://github.com/Rea888/xmas_project"><u>Link:
-                                            https://github.com/Rea888/xmas_project</u></a></p>
+                                    <a href="https://github.com/Rea888/xmas_project"><u>Link: xmas_project</u></a></p>
 
                                 <p style="color: #65507e"><b><b>Android Game</b></b></p>
                                 <p style="color: #e4d5f7"> As a former restaurant manager, I took the opportunity to
@@ -499,8 +496,7 @@
                                     dishes and earn points, offering an enjoyable and interactive experience tailored
                                     specifically to our restaurant. This game showcases my passion for combining
                                     technology and hospitality to enhance the dining experience.<br>
-                                    <a href="https://github.com/Rea888/TheWAITerGame"><u>Link:
-                                            https://github.com/Rea888/TheWAITerGame</u></a></p>
+                                    <a href="https://github.com/Rea888/TheWAITerGame"><u>Link: TheWAITerGame</u></a></p>
 
                                 <p style="color: #65507e"><b><b>Discord Bot</b></b></p>
                                 <p style="color: #e4d5f7">In my very first project, I developed a memo/planner bot for
@@ -509,8 +505,8 @@
                                     is
                                     equipped with calendar functions and reminder capabilities, allowing users to
                                     manage their tasks and schedules within the Discord platform. <br>
-                                    <a href="https://github.com/Rea888/TheWAITerGame"><u>Link:
-                                            https://github.com/Rea888/myfirstproject</u></a></p>
+                                    <a href="https://github.com/Rea888/TheWAITerGame"><u>Link: myfirstproject</u></a>
+                                </p>
 
                                 <h3 id="cvh" style="color: #602a70"><u><b>WORK EXPERIENCE</b></u></h3>
                                 <p style="color: #65507e"><b><b>PHP Developer</b></b></p>
@@ -686,6 +682,7 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('import/assets/js/main.js')}}"></script>
+
 
 </body>
 

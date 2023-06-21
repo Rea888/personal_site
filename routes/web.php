@@ -23,3 +23,7 @@ Route::get('/download-pdf', [PDFController::class, 'downloadPDF']);
 
 Route::post('/', [ContactController::class, 'storeContactForm'])->name('greetings');
 
+Route::get('/game', function () {
+    return view('game');
+});
+
