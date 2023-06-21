@@ -58,12 +58,15 @@
 <!-- ======= Hero Section ======= -->
 <div id="hero" class="home">
 
-    <div class="container">
-        <div class="hero-content">
-            <h1>I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></h1>
-            <p> Junior PHP developer </p>
+    <div class="container-fluid">
 
-            <ul class="list-unstyled list-social">
+        <canvas id="particle-canvas"></canvas>
+        <script src="{{asset('import/assets/js_mini/homeScript.min.js/homeScript.js')}}"></script>
+        <div class="homeIntro">
+            <p class="homeText">I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></p>
+            <p class="homeJ"> Junior PHP developer </p>
+
+            <ul class="list-unstyled list-social" id="homeIcon">
                 <a href="https://www.linkedin.com/in/viktoriarakhely"><img
                         src="{{asset('import/assets/img/linkedIn.png')}}"
                         alt="" height="20" width="20"></a>
@@ -72,6 +75,7 @@
                                                          style="margin-left:1%"></a>
             </ul>
         </div>
+
     </div>
 </div><!-- End Hero -->
 

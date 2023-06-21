@@ -146,24 +146,24 @@ canvas {
 }
 
 .line-container::before {
-    @extend .pseudo-class-shadow;
+. pseudo-class-shadow;
     width: 40px;
     box-shadow: -20px 10px 45px 4px rgba(251, 169, 40, 0.8);
 }
 
 .line-container::after {
-    @extend .pseudo-class-shadow;
+. pseudo-class-shadow;
     width: 40px;
     box-shadow: 207px -12px 45px 4px rgba(251, 169, 40, 0.8);
 }
 
 .line--top-left::before {
-    @extend .pseudo-class-shadow;
+. pseudo-class-shadow;
     box-shadow: 28px 20px 34px 3px rgba(251, 169, 40, 0.8);
 }
 
 .line--top-left::after {
-    @extend .pseudo-class-shadow;
+. pseudo-class-shadow;
     box-shadow: 48px 20px 34px 3px rgba(251, 169, 40, 0.8);
 }
 
@@ -223,7 +223,7 @@ canvas {
 }
 
 /* Landscape */
-@media screen and (max-height: 768px) and (orientation: landscape) {
+@media screen and (max-height: 768px) {
     #game {
         width: 100%;
         height: 100%;
@@ -231,6 +231,13 @@ canvas {
 
     canvas {
         height: 70vh;
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    #container {
+        height: 100vw;
+        transform: rotate(90deg);
     }
 }
 
