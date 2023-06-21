@@ -63,8 +63,8 @@
         <canvas id="particle-canvas"></canvas>
         <script src="{{asset('import/assets/js_mini/homeScript.min.js')}}"></script>
         <div class="homeIntro">
-            <p class="homeText">I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></p>
-            <p class="homeJ"> Junior PHP developer </p>
+            <h4 class="homeText">I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></h4>
+            <p class="homeJ">PHP developer </p>
 
             <ul class="list-unstyled list-social" id="homeIcon">
                 <a href="https://www.linkedin.com/in/viktoriarakhely"><img
@@ -73,7 +73,10 @@
                 <a href="https://github.com/Rea888"><img src="{{asset('import/assets/img/github.png')}}" height="20"
                                                          width="20" alt=""
                                                          style="margin-left:1%"></a>
+
             </ul>
+            <p class="scrollDown"><a href="#about"><img src="{{asset('import/assets/img/scrollDown.png')}}" height="20"
+                                                        width="20" alt=""></a></p>
         </div>
 
     </div>
@@ -102,7 +105,7 @@
                     <div class="about-descr">
 
 
-                        <p class="p-heading" id="title">Greetings, I am Viki, a spirited Junior PHP Developer
+                        <p class="p-heading" id="title">Greetings, I am Viki, a spirited PHP Developer
                             specializing in
                             backend
                             development. I am thrilled to introduce myself to you.</p>
@@ -130,7 +133,7 @@
                             developed
                             keen problem-solving skills.</p>
 
-                        <p class="separator" id="fourth">As an aspiring Junior PHP Developer, I am eager to bring my
+                        <p class="separator" id="fourth">As an aspiring PHP Developer, I am eager to bring my
                             combination
                             of
                             technical skills and background to a creative and collaborative setting. My relentless

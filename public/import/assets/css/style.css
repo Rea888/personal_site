@@ -903,6 +903,15 @@ h4 > a, h4 > img {
 }
 
 @media screen and (max-width: 768px) {
+
+    .scrollDown {
+        display: block !important;
+    }
+
+    .homeText {
+        font-size: 70px !important;
+    }
+
     #game {
         width: 100vw;
         height: 100vh;
@@ -1334,6 +1343,7 @@ h4 > a, h4 > img {
     font-weight: 0;
     color: white;
     padding-bottom: 20px;
+    line-height: 90px;
 }
 
 .homeJ {
@@ -1359,6 +1369,11 @@ h4 > a, h4 > img {
     left: 0;
 }
 
+.scrollDown {
+    position: relative;
+    z-index: 999;
+    display: none;
+}
 
 
 .hero-content .list-social li {
