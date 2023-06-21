@@ -433,9 +433,9 @@
 
         function updateStars() {
             for (let star of stars) {
-                star.y -= star.speed;
-                if (star.y < 0) {
-                    star.y = canvas.height;
+                star.y += star.speed; // Change this line
+                if (star.y > canvas.height) { // And this line
+                    star.y = 0;
                     star.x = Math.random() * canvas.width;
                     star.size = Math.random() * 2;
                     star.speed = Math.random() * 0.5 + 0.5;
