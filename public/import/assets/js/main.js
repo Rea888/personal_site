@@ -457,6 +457,7 @@
                 bullets: []
             };
 
+
             var invaders = [];
             for (var i = 0; i < 6; i++) {
                 for (var j = 0; j < 15; j++) {
@@ -469,7 +470,7 @@
                 }
             }
 
-            var invaderSpeed = 1;
+            var invaderSpeed = 2.2;
             var invaderDirection = 1;
 
 

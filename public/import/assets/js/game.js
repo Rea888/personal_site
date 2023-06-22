@@ -2,13 +2,13 @@
     "use strict";
 
     document.addEventListener('DOMContentLoaded', function () {
+
         var canvas = document.getElementById('game');
         var ctx = canvas.getContext('2d');
         var startButton = document.getElementById('startButton');
         var stars = [];
         var player;
         var gameRunning = true;
-
 
         var playerImage = new Image();
         var invaderImage = new Image();
@@ -39,11 +39,9 @@
                 player.x = canvas.width / 2;
                 player.y = canvas.height - 30;
             }
-
         }
 
         window.addEventListener('resize', adjustCanvasSize);
-
 
         function generateStars() {
             stars = [];
@@ -79,14 +77,6 @@
         }
 
         function initializeGame() {
-            // Lock screen orientation to portrait mode
-            if (screen.orientation && screen.orientation.lock) {
-                screen.orientation.lock('portrait').catch(function (error) {
-                    // Handle the error
-                    console.error('Could not lock screen orientation:', error);
-                });
-            }
-
             gameRunning = true;
             adjustCanvasSize();
             generateStars();
@@ -96,48 +86,21 @@
             };
 
             var invaders = [];
-
-            var isLandscape = window.innerWidth > window.innerHeight;
-
-            var invaderRows = isLandscape ? 5 : 6;
-            var invaderColumns = isLandscape ? 10 : 6;
-            var horizontalPadding = isLandscape ? canvas.width / 20 : canvas.width / 10;
+            var invaderRows = 5;
+            var invaderColumns = 6;
+            var horizontalPadding = canvas.width / 10;
             var verticalPadding = canvas.height / 20;
             var invaderSpacingX = (canvas.width - 2 * horizontalPadding) / invaderColumns;
-            var sizeModifier = isLandscape ? 0.3 : 0.6;
-            var invaderSize = invaderSpacingX * sizeModifier;
+            var invaderSize = invaderSpacingX * 0.6;
             var invaderSpacingY = invaderSize * 1.2;
 
-            // Adjust invader speed based on orientation
-            var invaderSpeed = isLandscape ? 0.2 : 0.5;
-
+            // Adjust invader speed
+            var invaderSpeed = 0.5;
 
             for (var i = 0; i < invaderRows; i++) {
                 for (var j = 0; j < invaderColumns; j++) {
-                    var xOffset = 0;
-
-                    if (isLandscape) {
-                        switch (i % 6) {
-                            case 0:
-                            case 2:
-                            case 4:
-                                // Middle
-                                xOffset = invaderSpacingX / 2;
-                                break;
-                            case 1:
-                            case 5:
-                                // Left
-                                xOffset = 0;
-                                break;
-                            case 3:
-                                // Right
-                                xOffset = invaderSpacingX;
-                                break;
-                        }
-                    }
-
                     invaders.push({
-                        x: horizontalPadding + j * invaderSpacingX + xOffset,
+                        x: horizontalPadding + j * invaderSpacingX,
                         y: verticalPadding + i * invaderSpacingY,
                         width: invaderSize,
                         height: invaderSize
@@ -149,9 +112,7 @@
 
             update();
 
-
             function update() {
-
                 var hitWall = false;
                 var maxHeight = canvas.height - player.height;
 
@@ -167,7 +128,6 @@
                         return;
                     }
                 }
-
 
                 // Check for win condition
                 if (invaders.length === 0) {
@@ -272,7 +232,18 @@
             e.preventDefault();
         }, false);
 
-
     });
+
+    function checkOrientation() {
+        if (window.innerWidth > window.innerHeight) {
+            window.location.href = "landscape";
+        }
+    }
+
+    window.addEventListener('load', checkOrientation);
+    window.addEventListener('resize', function () {
+        // Refresh the page after a delay to make sure new orientation is correctly detected
+        setTimeout(checkOrientation, 200);
+    }, false);
 
 })();

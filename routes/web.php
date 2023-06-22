@@ -27,3 +27,6 @@ Route::get('/game', function () {
     return view('game');
 });
 
+Route::get('/landscape', function () {
+    return view('gameLandscape');
+});

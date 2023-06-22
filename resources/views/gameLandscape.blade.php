@@ -7,13 +7,13 @@
 
     <title>Game</title>
     <!-- Include your CSS here -->
-    <link rel="stylesheet" href="{{asset('import/assets/css/game.css')}}">
+    <link rel="stylesheet" href="{{asset('import/assets/css/gameLandscape.css')}}">
 </head>
 <body>
 
-<div class="container-fluid" id="container">
+<div id="container">
     <canvas id="game"></canvas>
-    <div class="button" id="startButton">
+    <div class="button" id="startButtonLandscape">
         <div class="line-container">
             <span class="text">Start Game</span>
             <div class="line line--top-left line--thick thick-line--short"></div>
@@ -23,9 +23,10 @@
             <div class="line line--top line--thin"></div>
             <div class="line line--bottom line--thin"></div>
         </div>
+
     </div>
 </div>
 
-<script src="{{asset('import/assets/js_mini/game.min.js')}}"></script>
+<script src="{{asset('import/assets/js_mini/gameLandscape.min.js')}}"></script>
 </body>
 </html>
