@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    const borderBottomColor = '#e4d5f7';
+    const borderBottomHeight = 1;
 
     let particlesArray;
     let lastParticleCreationTime = 0;
@@ -29,9 +31,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (this.size > 0.2) this.size -= 0.1;
         }
 
+        drawBorder() {
+            ctx.fillStyle = borderBottomColor;
+            ctx.fillRect(0, canvas.height - borderBottomHeight, canvas.width, borderBottomHeight);
+        }
+
         draw() {
             ctx.fillStyle = '#8C43F6';
             ctx.strokeStyle = '#8860D0';
+            ctx.shadowColor = '#8860D0';
+            ctx.shadowBlur = 10;
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -54,6 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particlesArray[0].drawBorder();
+
         for (let i = 0; i < particlesArray.length; i++) {
             particlesArray[i].update();
             particlesArray[i].draw();

@@ -61,22 +61,20 @@
     <div class="container-fluid">
 
         <canvas id="particle-canvas"></canvas>
-        <script src="{{asset('import/assets/js_mini/homeScript.min.js')}}"></script>
+        <script src="{{asset('import/assets/js/homeScript.js')}}"></script>
         <div class="homeIntro">
-            <h4 class="homeText">I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></h4>
-            <p class="homeJ">PHP developer </p>
+            <h4 class="homeText text-responsive">I'm <span class="typed"
+                                                           data-typed-items="Viktoria Rakhely, a Developer"></span></h4>
+            <p class="homeJ text-responsive">PHP developer </p>
 
-            <ul class="list-unstyled list-social" id="homeIcon">
-                <a href="https://www.linkedin.com/in/viktoriarakhely"><img
-                        src="{{asset('import/assets/img/linkedIn.png')}}"
-                        alt="" height="20" width="20"></a>
-                <a href="https://github.com/Rea888"><img src="{{asset('import/assets/img/github.png')}}" height="20"
-                                                         width="20" alt=""
-                                                         style="margin-left:1%"></a>
 
-            </ul>
-            <p class="scrollDown"><a href="#about"><img src="{{asset('import/assets/img/scrollDown.png')}}" height="20"
-                                                        width="20" alt=""></a></p>
+            <p class="scrollDown"><a class="nav-link scrollto " href="#about">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="32" height="32">
+                        <path d="M0 0h32v32H0V0z" fill="none"/>
+                        <path d="M9 14l7 7 7-7H9z"/>
+                    </svg>
+
+                </a></p>
         </div>
 
     </div>

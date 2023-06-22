@@ -902,32 +902,8 @@ h4 > a, h4 > img {
     margin-top: 10px;
 }
 
+
 @media screen and (max-width: 768px) {
-
-    .scrollDown {
-        display: block !important;
-        animation: jump 1s infinite alternate;
-       
-
-    }
-
-    @keyframes jump {
-        0% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-
-
-    .homeText {
-        font-size: 70px !important;
-    }
 
     #game {
         width: 100vw;
@@ -1097,6 +1073,7 @@ h4 > a, h4 > img {
 #header .logo img {
     max-height: 40px;
 }
+
 
 @media (max-width: 992px) {
     #header {
@@ -1340,35 +1317,35 @@ h4 > a, h4 > img {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: linear-gradient(45deg, #2b5876, #4e4376);
+    background: radial-gradient(circle at center, #111111 20%, black 100%);
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .homeIntro {
     text-align: center;
     color: white;
+
 }
 
 .homeText {
-    font-size: 90px;
-    text-shadow: 3px 3px black;
+    font-size: calc(3em + 3vw + 3vh);
+    line-height: calc(1em + 2vw + 2vh);
     font-family: Raleway;
     font-weight: 0;
     color: white;
     padding-bottom: 20px;
-    line-height: 90px;
+    text-shadow: 0 0 10px 4px #1a1e21;
 }
 
 .homeJ {
-    font-size: 25px;
+    font-size: calc(1em + 0.5vw + 0.5vh);
     text-shadow: 2px 2px black;
     font-family: Nasa;
-
-
 }
 
 #homeIcon {
@@ -1384,12 +1361,60 @@ h4 > a, h4 > img {
     position: absolute;
     top: 0;
     left: 0;
+
+
 }
 
 .scrollDown {
     position: relative;
     z-index: 999;
     display: none;
+    padding-top: 10vh;
+}
+
+@media screen and (orientation: landscape) {
+    /* Styles specific to landscape mode */
+    .homeIntro {
+
+        padding-top: 15%; /* Add padding as per your needs */
+    }
+
+    .homeText {
+        padding-bottom: 0;
+    }
+   
+}
+
+
+@media screen and (max-width: 768px), screen and (max-height: 768px) and (orientation: landscape) {
+    /* Mobile and tablet styles */
+    .homeText {
+        font-size: calc(1em + 4vw + 4vh);
+        line-height: calc(0.5em + 4vw + 4vh);
+    }
+
+    .homeJ {
+        font-size: calc(0.5em + 1vw + 1vh);
+
+    }
+
+    .scrollDown {
+        display: block !important;
+        animation: jump 1s infinite alternate;
+
+    }
+
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
 }
 
 
@@ -1500,6 +1525,7 @@ h4 > a, h4 > img {
     padding-top: 120px;
     position: relative;
     overflow: hidden;
+
 }
 
 #about .div-img-bg {
