@@ -12,7 +12,7 @@ let invaders;
 var playerImage = new Image();
 var invaderImage = new Image();
 
-playerImage.src = 'import/assets/img/starShip.png';
+playerImage.src = 'import/assets/img/starShipSide.png';
 invaderImage.src = 'import/assets/img/invader1.png';
 
 let touchY;
@@ -30,21 +30,60 @@ let score = 0;
 
 let invaderBullets = [];
 
+let stars;
+let starsCount = 200;
+let starSpeed = 1;
+
+function generateStars() {
+    stars = [];
+    const starCount = 100; // You can adjust this number based on your preference
+    for (let i = 0; i < starCount; i++) {
+        stars.push({
+            x: Math.random() * canvas.width, // This line should remain the same. The stars should still start from random x-positions
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2,
+            opacity: Math.random(),
+            speed: Math.random() * 0.5 + 0.5 // Speed at which the star moves
+        });
+    }
+}
+
+function updateStars() {
+    for (let star of stars) {
+        star.x -= star.speed; // Change this line to move the star to the left
+        if (star.x < 0) { // When the star's x is less than 0, reset it to the right side of the canvas
+            star.x = canvas.width;
+            star.y = Math.random() * canvas.height;
+            star.size = Math.random() * 2;
+            star.speed = Math.random() * 0.5 + 0.5;
+        }
+    }
+}
+
+function renderStars() {
+    for (let star of stars) {
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fillRect(star.x, star.y, star.size, star.size);
+    }
+}
+
 
 function startGame() {
     player = {
         x: 0,
         y: canvas.height / 2,
-        speed: 2,
-        size: 20,
+        speed: 4,
+        size: 50,
     };
+
+    generateStars();
 
     bullets = [];
     invaders = [];
 
     window.addEventListener('touchstart', function (e) {
         touchY = e.touches[0].clientY;
-        bullets.push({x: player.x + player.size, y: player.y + player.size / 2, size: 10});
+        bullets.push({x: player.x + player.size, y: player.y + player.size / 2, size: 4});
     }, false);
 
     window.addEventListener('touchmove', function (e) {
@@ -73,8 +112,15 @@ function startGame() {
 
 startButton.addEventListener('click', startGame);
 
+
 function update() {
     if (isGameOver) return;
+
+    // Clear the canvas first
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    updateStars();
+
     // Update bullets
     for (let i = 0; i < bullets.length; i++) {
         bullets[i].x += 5;
@@ -93,6 +139,7 @@ function update() {
         }
     }
 
+
     // Update invader bullets
     for (let i = 0; i < invaderBullets.length; i++) {
         invaderBullets[i].x -= 5;
@@ -109,13 +156,13 @@ function update() {
 
     // Update invaders
     if (Math.random() < 0.02) {
-        invaders.push({x: canvas.width, y: Math.random() * canvas.height, speed: 2, size: 20});
+        invaders.push({x: canvas.width, y: Math.random() * canvas.height, speed: 2, size: 30});
     }
 
     for (let i = 0; i < invaders.length; i++) {
         invaders[i].x -= invaders[i].speed;
-        if (Math.random() < 0.01) {
-            invaderBullets.push({x: invaders[i].x, y: invaders[i].y + invaders[i].size / 2, size: 10});
+        if (Math.random() < 0.005) {
+            invaderBullets.push({x: invaders[i].x, y: invaders[i].y + invaders[i].size / 2, size: 5});
         }
         if (player.x < invaders[i].x + invaders[i].size &&
             player.x + player.size > invaders[i].x &&
@@ -133,23 +180,21 @@ function update() {
         return;
     }
 
-    // Render
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+    renderStars(); // Render stars here
 
     // Draw player
     ctx.drawImage(playerImage, player.x, player.y, player.size, player.size);
 
     // Draw bullets
-    ctx.fillStyle = 'red';
+    ctx.fillStyle = '#e4d5f7';
     bullets.forEach(b => ctx.fillRect(b.x, b.y, b.size, b.size));
 
     // Draw invader bullets
-    ctx.fillStyle = 'orange';
+    ctx.fillStyle = '#e8449c';
     invaderBullets.forEach(b => ctx.fillRect(b.x, b.y, b.size, b.size));
 
     // Draw invaders
-    ctx.fillStyle = 'blue';
+
     for (var i = 0; i < invaders.length; i++) {
         var invader = invaders[i];
         ctx.drawImage(invaderImage, invader.x, invader.y, invader.size, invader.size);
@@ -177,13 +222,15 @@ function update() {
 
 function gameOver() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = "30px Arial";
-    ctx.fillStyle = "red";
+    ctx.font = "40px Arial";
+    ctx.fillStyle = "#e08400";
     ctx.textAlign = "center";
     ctx.fillText("Game Over", canvas.width / 2, canvas.height / 2 - 40);
     ctx.fillText("Score: " + score, canvas.width / 2, canvas.height / 2);
     startButton.style.display = 'block';
+    score = 0;
 }
+
 
 function checkOrientation() {
     if (window.innerHeight > window.innerWidth) { // Portrait

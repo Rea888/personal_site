@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         init();
     });
 
+
     class Particle {
         constructor(x, y, size) {
             this.x = x;
