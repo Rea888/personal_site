@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const borderBottomColor = '#e4d5f7';
     const borderBottomHeight = 1;
 
+    let lastEventTime = Date.now();
     let particlesArray;
     let lastParticleCreationTime = 0;
     const particleCreationInterval = 10;
@@ -110,7 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
     canvas.addEventListener('touchmove', (event) => {
         event.preventDefault();
         const touch = event.touches[0];
-        createParticle(touch.clientX, touch.clientY);
+
+        const currentTime = Date.now();
+        if (currentTime - lastEventTime > 50) {  // 100 milliseconds
+            createParticle(touch.clientX, touch.clientY);
+            lastEventTime = currentTime;
+        }
     });
 
     init();

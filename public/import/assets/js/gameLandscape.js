@@ -94,6 +94,14 @@ function startGame() {
         } else if (delta < 0 && player.y > 0) {
             player.y -= player.speed;
         }
+        // Ensure player doesn't move off the bottom of the screen
+        if (player.y > canvas.height - player.size) {
+            player.y = canvas.height - player.size;
+        }
+        // Ensure player doesn't move off the top of the screen
+        else if (player.y < 0) {
+            player.y = 0;
+        }
 
         touchY = e.touches[0].clientY;
     }, false);

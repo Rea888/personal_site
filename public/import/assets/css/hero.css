@@ -79,20 +79,38 @@
     margin: 0;
 }
 
+
+@media screen and (orientation: portrait) and (max-height: 900px) {
+
+    .scrollDown {
+        display: block !important;
+        animation: jump 1s infinite alternate;
+        padding-top: 10vh;
+    }
+
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
 @media screen and (orientation: landscape) and (max-width: 900px) {
 
     .homeText {
         padding-top: 20vh;
     }
 
-}
-
-@media screen and (max-width: 900px) {
-
     .scrollDown {
         display: block !important;
         animation: jump 1s infinite alternate;
-        padding-top: 5vh;
+        padding-top: 2vh;
     }
 
     @keyframes jump {
