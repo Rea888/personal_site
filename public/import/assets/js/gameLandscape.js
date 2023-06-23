@@ -31,8 +31,7 @@ let score = 0;
 let invaderBullets = [];
 
 let stars;
-let starsCount = 200;
-let starSpeed = 1;
+
 
 function generateStars() {
     stars = [];
@@ -72,7 +71,7 @@ function startGame() {
     player = {
         x: 0,
         y: canvas.height / 2,
-        speed: 4,
+        speed: 3,
         size: 50,
     };
 
@@ -117,6 +116,7 @@ function startGame() {
     hearts = 3; //
     update();
 }
+
 
 startButton.addEventListener('click', startGame);
 
