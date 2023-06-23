@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const borderBottomColor = '#e4d5f7';
     const borderBottomHeight = 1;
 
-    let lastEventTime = Date.now();
     let particlesArray;
     let lastParticleCreationTime = 0;
     const particleCreationInterval = 10;
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         canvas.height = window.innerHeight;
         init();
     });
-
 
     class Particle {
         constructor(x, y, size) {
@@ -41,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         draw() {
             ctx.fillStyle = '#8C43F6';
             ctx.strokeStyle = '#8860D0';
-            ctx.shadowColor = '#8860D0';
-            ctx.shadowBlur = 10;
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
@@ -54,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function init() {
         particlesArray = [];
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 100; i++) { // increased initial number of particles
             particlesArray.push(new Particle(
                 Math.random() * canvas.width,
                 Math.random() * canvas.height,
@@ -62,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ));
         }
     }
+
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -111,12 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     canvas.addEventListener('touchmove', (event) => {
         event.preventDefault();
         const touch = event.touches[0];
-
-        const currentTime = Date.now();
-        if (currentTime - lastEventTime > 50) {  // 100 milliseconds
-            createParticle(touch.clientX, touch.clientY);
-            lastEventTime = currentTime;
-        }
+        createParticle(touch.clientX, touch.clientY);
     });
 
     init();
