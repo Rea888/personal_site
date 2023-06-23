@@ -28,6 +28,15 @@
 
 
     <!-- Main CSS File -->
+    <link href="{{asset('import/assets/css/about.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/contacts.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/cv.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/font.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/hero.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/navbar.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/screenGame.css')}}" rel="stylesheet">
+    <link href="{{asset('import/assets/css/service.css')}}" rel="stylesheet">
     <link href="{{asset('import/assets/css/style.css')}}" rel="stylesheet">
 
 
@@ -61,7 +70,7 @@
     <div class="container-fluid">
 
         <canvas id="particle-canvas"></canvas>
-        <script src="{{asset('import/assets/js/homeScript.js')}}"></script>
+
         <div class="homeIntro">
             <h4 class="homeText">I'm <span class="typed" data-typed-items="Viktoria Rakhely, a Developer"></span></h4>
             <p class="homeJ">PHP developer </p>
@@ -299,7 +308,7 @@
                         <div class="row gx-6">
                             <h3 class="contactLine" style="color: white">Contacts</h3>
                             <div class="col-lg-6">
-                                <div class="about-descr" id="cont1">
+                                <div class="about-descr">
 
                                     <h4 style="color: white" class="first_line_c"><a
                                             href="mailto:info@viktoriarakhely.eu"
@@ -322,7 +331,7 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <div class="about-descr" id="cont2">
+                                <div class="about-descr">
 
                                     <h4 style="color: white" class="first_line_c"><img
                                             src="{{asset('import/assets/img/phone.svg')}}"
@@ -683,6 +692,7 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('import/assets/js_mini/main.min.js')}}"></script>
+<script src="{{asset('import/assets/js_mini/homeScript_min.js')}}"></script>
 
 
 </body>
