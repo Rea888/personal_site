@@ -1,0 +1,172 @@
+#about {
+    width: 100%;
+    height: auto;
+    background: black;
+    padding-top: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+#about .div-img-bg {
+    padding-bottom: 35px;
+    border: 20px solid #602a70;
+    box-shadow: 2px 2px 85px 2px #434B4E;
+}
+
+#about .div-img-bg .about-img img {
+    width: 105%;
+    box-shadow: 2px 2px 85px 2px #434B4E;
+    margin-top: -60px;
+    margin-left: 40px;
+    height: 400px;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+#about .about-descr .p-heading {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    text-align: left;
+}
+
+#about .about-descr .separator {
+    max-width: 80%;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+
+#greetings {
+    position: relative;
+}
+
+#greetings::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 1px solid white;
+    opacity: 0;
+}
+
+#greetings.animate-border::before {
+    opacity: 1;
+    animation: drawBorder 3s forwards;
+}
+
+@keyframes drawBorder {
+    0% {
+        width: 0;
+        height: 0;
+    }
+    50% {
+        width: 100%;
+        height: 0;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#hrUp {
+    margin-top: 20px;
+    border-top: 3px solid #bbb;
+}
+
+#hrDown {
+    margin-top: 50px;
+    border-top: 3px solid #bbb;
+}
+
+/* About */
+.head-info .header-content .cmaster h1 {
+    font-size: 32px;
+}
+
+#about .div-img-bg {
+    padding: 0;
+}
+
+#about .div-img-bg .about-img img {
+    margin-top: 0%;
+    margin-left: calc(0% - 0px);
+}
+
+#about .about-descr .p-heading {
+    font-size: 20px;
+}
+
+#about .about-descr .separator {
+    max-width: 100%;
+    margin-bottom: 0;
+}
+
+
+#title {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+}
+
+#title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#first {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-in-out;
+}
+
+#first.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#second {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s ease-in-out;
+}
+
+#second.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#third {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-in-out;
+}
+
+#third.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#fourth {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-in-out;
+}
+
+#fourth.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#fifth {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-in-out;
+}
+
+#fifth.visible {
+    opacity: 1;
+    transform: translateX(0);
+}

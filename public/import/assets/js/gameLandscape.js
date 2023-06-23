@@ -9,6 +9,12 @@ let player;
 let bullets;
 let invaders;
 
+var playerImage = new Image();
+var invaderImage = new Image();
+
+playerImage.src = 'import/assets/img/starShip.png';
+invaderImage.src = 'import/assets/img/invader1.png';
+
 let touchY;
 
 let hearts = 3; // Player's lives
@@ -130,9 +136,9 @@ function update() {
     // Render
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+
     // Draw player
-    ctx.fillStyle = 'green';
-    ctx.fillRect(player.x, player.y, player.size, player.size);
+    ctx.drawImage(playerImage, player.x, player.y, player.size, player.size);
 
     // Draw bullets
     ctx.fillStyle = 'red';
@@ -144,7 +150,10 @@ function update() {
 
     // Draw invaders
     ctx.fillStyle = 'blue';
-    invaders.forEach(i => ctx.fillRect(i.x, i.y, i.size, i.size));
+    for (var i = 0; i < invaders.length; i++) {
+        var invader = invaders[i];
+        ctx.drawImage(invaderImage, invader.x, invader.y, invader.size, invader.size);
+    }
 
     // Draw hearts
     for (let i = 0; i < 3; i++) {

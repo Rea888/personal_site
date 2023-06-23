@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'SpaceLight';
+    src: url(../fonts/SpaceGrotesk-Light.ttf);
+}
+
+@font-face {
+    font-family: 'SpaceBold';
+    src: url(../fonts/SpaceGrotesk-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'SpaceMedium';
+    src: url(../fonts/SpaceGrotesk-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'SpaceSemiBold';
+    src: url(../fonts/SpaceGrotesk-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'Nasa';
+    src: url(../fonts/nasalization-rg.otf);
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url(../fonts/Raleway-VariableFont_wght.ttf);
+}
