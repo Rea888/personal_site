@@ -552,8 +552,8 @@ portfolio-details {
 #glowSkill {
     font-size: 20px;
     word-spacing: 30px;
+    line-height: 5vh;
 }
-
 
 .glow-on-hover {
     width: 220px;

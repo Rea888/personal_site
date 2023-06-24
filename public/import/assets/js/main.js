@@ -621,10 +621,10 @@
 
 
                 // Draw hearts
-                var heartSize = 30; // Adjust this as necessary
-                var heartGap = 10; // Space between hearts
-                var heartY = 10; // Adjust Y position as necessary
-                var heartX = 10; // Initial X position
+                var heartSize = 30;
+                var heartGap = 10;
+                var heartY = 10;
+                var heartX = 10;
 
                 for (var i = 0; i < 3; i++) {
                     var heartImg = i < hearts ? fullHeartImg : emptyHeartImg;
