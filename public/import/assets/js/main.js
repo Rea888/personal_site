@@ -650,12 +650,17 @@
 
         startButton.addEventListener('click', function () {
 
-            generateStars();
-            canvas.style.display = 'block';
-            startButton.style.display = 'none';
-            restartButton.style.display = 'block';
-            initializeGame();
 
+            if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // If on mobile or tablet, redirect to the game page
+                window.location.href = 'game';
+            } else {
+                generateStars();
+                canvas.style.display = 'block';
+                startButton.style.display = 'none';
+                restartButton.style.display = 'block';
+                initializeGame();
+            }
         });
 
         restartButton.addEventListener('click', function () {
