@@ -242,6 +242,7 @@ portfolio-details {
 #whole {
 
     background-color: black;
+
 }
 
 
@@ -253,6 +254,11 @@ portfolio-details {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-in-out;
+    text-shadow: 0.1em 0.1em 0.1em black,
+    -0.1em -0.1em 0.1em black,
+    0.1em -0.1em 0.1em black,
+    -0.1em 0.1em 0.1em black;
+
 
 }
 
@@ -524,6 +530,11 @@ portfolio-details {
     transform: translateY(50px);
     transition: all 1s ease-in-out;
     word-break: break-all;
+    text-shadow: 0.1em 0.1em 0.1em black,
+    -0.1em -0.1em 0.1em black,
+    0.1em -0.1em 0.1em black,
+    -0.1em 0.1em 0.1em black;
+
 
 }
 
@@ -536,9 +547,7 @@ portfolio-details {
     padding-top: 20px;
 }
 
-.brCv {
-    margin-bottom: 20px;
-}
+
 
 #glowSkill {
     font-size: 20px;
@@ -668,9 +677,8 @@ portfolio-details {
 
 
     #glowSkill {
-        line-height: 1vh;
-        word-spacing: 0;
-        font-size: 12px;
+        line-height: 5vh;
+
     }
 
     #quote {
@@ -699,7 +707,7 @@ portfolio-details {
     }
 
     #glowSkill {
-        line-height: 5vh;
+        line-height: 10vh;
     }
 
     #quote {

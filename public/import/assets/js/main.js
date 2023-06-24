@@ -277,8 +277,6 @@
     }
 
     // Generate dots on page load
-
-
     window.addEventListener('load', () => {
         generateDots();
         randomizeVisibility();
@@ -388,6 +386,11 @@
      */
 
     var scaleFactor = 1;
+    let fullHeartImg = new Image();
+    fullHeartImg.src = 'import/assets/img/heart.png';
+
+    let emptyHeartImg = new Image();
+    emptyHeartImg.src = 'import/assets/img/emptyheart.png';
 
     function adjustCanvasSize(canvas) {
         if (window.innerWidth <= 768) {
@@ -425,7 +428,7 @@
                     y: Math.random() * canvas.height,
                     size: Math.random() * 2,
                     opacity: Math.random(),
-                    speed: Math.random() * 0.5 + 0.5
+                    speed: Math.random() * 1.5 + 1
                 });
             }
         }
@@ -437,7 +440,7 @@
                     star.y = 0;
                     star.x = Math.random() * canvas.width;
                     star.size = Math.random() * 2;
-                    star.speed = Math.random() * 0.5 + 0.5;
+                    star.speed = Math.random() * 1.5 + 1;
                 }
             }
         }
@@ -449,31 +452,20 @@
             }
         }
 
+        var invaders = [];
+        var invaderBullets = [];
+
         function initializeGame() {
             var player = {
                 x: canvas.width / 2 - (20 * scaleFactor),
-                y: canvas.height - (50 * scaleFactor),
-                width: 40 * scaleFactor,
-                height: 30 * scaleFactor,
+                y: canvas.height - (60 * scaleFactor),
+                width: 50 * scaleFactor,
+                height: 50 * scaleFactor,
                 bullets: []
             };
-
-
-            var invaders = [];
-            for (var i = 0; i < 6; i++) {
-                for (var j = 0; j < 15; j++) {
-                    invaders.push({
-                        x: (40 * j + 10) * scaleFactor,
-                        y: (30 * i + 10) * scaleFactor,
-                        width: 30 * scaleFactor,
-                        height: 20 * scaleFactor
-                    });
-                }
-            }
-
-            var invaderSpeed = 2.2;
-            var invaderDirection = 1;
-
+            var score = 0;
+            var hearts = 3;
+            var invaderBulletSpeed = 3;
 
             canvas.addEventListener('mousemove', function (e) {
                 var nextX = e.clientX - canvas.offsetLeft - player.width / 2;
@@ -492,23 +484,67 @@
             });
 
             function update() {
-                var hitWall = false;
+                // Invaders and invader bullets logic
+                if (Math.random() < 0.05) {
+                    invaders.push({x: Math.random() * canvas.width, y: 0, speed: 2, size: 30});
+                }
 
-                for (var i = 0; i < invaders.length; i++) {
-                    invaders[i].x += invaderSpeed * invaderDirection;
-                    if (invaders[i].x <= 0 || invaders[i].x + invaders[i].width >= canvas.width) {
-                        hitWall = true;
+                for (let i = invaders.length - 1; i >= 0; i--) {
+                    invaders[i].y += invaders[i].speed;
+
+                    if (Math.random() < 0.01) {
+                        invaderBullets.push({
+                            x: invaders[i].x + invaders[i].size / 2,
+                            y: invaders[i].y + invaders[i].size,
+                            width: 3, // Bullet width
+                            height: 8, // Bullet height
+                            speed: invaderBulletSpeed
+                        });
                     }
-                    if (invaders[i].y + invaders[i].height >= player.y) {
-                        renderGameOver();
-                        return;
+
+                    // Player and Invader collision logic
+                    if (player.x < invaders[i].x + invaders[i].size &&
+                        player.x + player.width > invaders[i].x &&
+                        player.y < invaders[i].y + invaders[i].size &&
+                        player.y + player.height > invaders[i].y) {
+
+                        hearts -= 1;  // assuming you have a variable named hearts
+                        invaders.splice(i, 1); // remove the invader
+
+                        if (hearts <= 0) {
+                            hearts = 0; //preventing hearts go below 0
+                            renderGameOver();
+                            return;
+                        }
+
+                        continue;
                     }
                 }
 
-                if (hitWall) {
-                    invaderDirection *= -1;
-                    for (var i = 0; i < invaders.length; i++) {
-                        invaders[i].y += 20;
+                // Adding invader bullet update
+                for (var i = invaderBullets.length - 1; i >= 0; i--) {
+                    var b = invaderBullets[i];
+                    b.y += b.speed;
+
+                    if (player.x < b.x + b.size &&
+                        player.x + player.width > b.x &&
+                        player.y < b.y + b.size &&
+                        player.y + player.height > b.y) {
+
+                        hearts -= 1;
+                        invaderBullets.splice(i, 1);
+
+                        if (hearts <= 0) {
+                            hearts = 0;
+                            renderGameOver();
+                            return;
+                        }
+
+                        continue;
+                    }
+
+                    if (b.y > canvas.height) {  // Removing if it's out of the screen
+                        invaderBullets.splice(i, 1);
                     }
                 }
 
@@ -518,10 +554,12 @@
 
                     for (var j = invaders.length - 1; j >= 0; j--) {
                         var invader = invaders[j];
-                        if (b.x > invader.x && b.x < invader.x + invader.width &&
-                            b.y > invader.y && b.y < invader.y + invader.height) {
+                        if (b.x > invader.x && b.x < invader.x + invader.size &&
+                            b.y > invader.y && b.y < invader.y + invader.size) {
                             invaders.splice(j, 1);
                             player.bullets.splice(i, 1);
+
+                            score += 10;  // Increase the score
                             break;
                         }
                     }
@@ -535,6 +573,7 @@
                 render();
                 requestAnimationFrame(update);
             }
+
 
             function render() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -557,7 +596,7 @@
                 // Render invaders using the image
                 for (var i = 0; i < invaders.length; i++) {
                     var invader = invaders[i];
-                    ctx.drawImage(invaderImage, invader.x, invader.y, invader.width, invader.height);
+                    ctx.drawImage(invaderImage, invader.x, invader.y, invader.size, invader.size);
                 }
 
                 // Render bullets
@@ -567,14 +606,32 @@
                     ctx.fillRect(bullet.x, bullet.y, 2, 10);
                 }
 
-                // Check for win condition
-                if (invaders.length === 0) {
-                    ctx.fillStyle = '#602a70';
-                    ctx.font = '80px Arial';
-                    ctx.textAlign = 'center';
-                    ctx.fillText('You won!', canvas.width / 2, canvas.height / 2);
+                // Render invader bullets
+                ctx.fillStyle = '#e8449c'; // Set color to pink
+                for (var i = 0; i < invaderBullets.length; i++) {
+                    var bullet = invaderBullets[i];
+                    ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height); // Use height and width
+                }
+
+                // Render score
+                ctx.fillStyle = '#fff';
+                ctx.font = '30px Arial';
+                ctx.textAlign = 'right';  // Align the text to the right
+                ctx.fillText('Score: ' + score, canvas.width - 10, 30);
+
+
+                // Draw hearts
+                var heartSize = 30; // Adjust this as necessary
+                var heartGap = 10; // Space between hearts
+                var heartY = 10; // Adjust Y position as necessary
+                var heartX = 10; // Initial X position
+
+                for (var i = 0; i < 3; i++) {
+                    var heartImg = i < hearts ? fullHeartImg : emptyHeartImg;
+                    ctx.drawImage(heartImg, heartX + i * (heartSize + heartGap), heartY, heartSize, heartSize);
                 }
             }
+
 
             function renderGameOver() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -582,6 +639,10 @@
                 ctx.font = '80px Arial';
                 ctx.textAlign = 'center';
                 ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2);
+                ctx.font = '40px Arial';
+                ctx.fillText('Final Score: ' + score, canvas.width / 2, canvas.height / 2 + 60);
+
+                score = 0; // Reset the score for the next game
             }
 
             update();
@@ -589,17 +650,12 @@
 
         startButton.addEventListener('click', function () {
 
+            generateStars();
+            canvas.style.display = 'block';
+            startButton.style.display = 'none';
+            restartButton.style.display = 'block';
+            initializeGame();
 
-            if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // If on mobile or tablet, redirect to the game page
-                window.location.href = 'game';
-            } else {
-                generateStars();
-                canvas.style.display = 'block';
-                startButton.style.display = 'none';
-                restartButton.style.display = 'block';
-                initializeGame();
-            }
         });
 
         restartButton.addEventListener('click', function () {
