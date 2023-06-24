@@ -649,11 +649,9 @@
         }
 
         startButton.addEventListener('click', function () {
-
-
             if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // If on mobile or tablet, redirect to the game page
-                window.location.href = 'game';
+                // If on mobile or tablet, redirect to the game blade
+                window.location.href = '/game'; // Modify this according to the actual path to your game blade
             } else {
                 generateStars();
                 canvas.style.display = 'block';
