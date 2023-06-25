@@ -20,7 +20,7 @@ invaderImage.src = 'import/assets/img/invader1.png';
 
 let touchY;
 
-let hearts = 3; // Player's lives
+let hearts = 3;
 let isGameOver = false;
 
 let fullHeartImg = new Image();
@@ -44,7 +44,7 @@ function generateStars() {
             y: Math.random() * canvas.height,
             size: Math.random() * 2,
             opacity: Math.random(),
-            speed: Math.random() * 0.5 + 0.5
+            speed: Math.random() * 1.5 + 1
         });
     }
 }
@@ -56,7 +56,7 @@ function updateStars() {
             star.y = 0;
             star.x = Math.random() * canvas.width;
             star.size = Math.random() * 2;
-            star.speed = Math.random() * 0.5 + 0.5;
+            star.speed = Math.random() * 1.5 + 1;
         }
     }
 }
@@ -83,7 +83,6 @@ function startGame() {
     bullets = [];
     invaders = [];
 
-    // For touch controls on mobile devices
     canvas.addEventListener('touchmove', function (e) {
         var touch = e.touches[0];
         var nextX = touch.clientX - canvas.offsetLeft - player.width / 2;
@@ -98,19 +97,19 @@ function startGame() {
     }, false);
 
     canvas.addEventListener('touchstart', function (e) {
-        player.bullets.push({x: player.x + player.width / 2, y: player.y, speed: 5, size: 5});
+        player.bullets.push({x: player.x + player.width / 2, y: player.y, speed: 5, width: 3, height: 8});
         e.preventDefault();
     }, false);
 
 
-    startButton.style.display = 'none';  // Hide start button
+    startButton.style.display = 'none';
     startButton.textContent = 'Restart Game';
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    player.y = canvas.height - player.height - 10; // Adjust the value here to position the player properly
+    player.y = canvas.height - player.height - 10;
     isGameOver = false;
-    hearts = 3; //
+    hearts = 3;
     update();
 }
 
@@ -119,7 +118,6 @@ startButton.addEventListener('click', startGame);
 function update() {
     if (isGameOver) return;
 
-    // Clear the canvas first
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     updateStars();
@@ -130,8 +128,8 @@ function update() {
 
         for (var j = invaders.length - 1; j >= 0; j--) {
             var invader = invaders[j];
-            if (b.x < invader.x + invader.size && b.x + b.size > invader.x &&
-                b.y < invader.y + invader.size && b.y + b.size > invader.y) {
+            if (b.x < invader.x + invader.size && b.x + b.width > invader.x &&
+                b.y < invader.y + invader.size && b.y + b.height > invader.y) {
                 invaders.splice(j, 1);
                 player.bullets.splice(i, 1);
                 score += 10;
@@ -143,14 +141,15 @@ function update() {
     }
 
 
+
     // Update invader bullets
     for (let i = 0; i < invaderBullets.length; i++) {
-        invaderBullets[i].y += 5; // Add to the y-coordinate
+        invaderBullets[i].y += 5;
 
         if (invaderBullets[i].x < player.x + player.width &&
-            invaderBullets[i].x + invaderBullets[i].size > player.x &&
+            invaderBullets[i].x + invaderBullets[i].width > player.x &&
             invaderBullets[i].y < player.y + player.height &&
-            invaderBullets[i].y + invaderBullets[i].size > player.y) {
+            invaderBullets[i].y + invaderBullets[i].height > player.y) {
 
             hearts -= 1;
             invaderBullets.splice(i, 1);
@@ -160,16 +159,17 @@ function update() {
 
     // Update invaders
     if (Math.random() < 0.02) {
-        invaders.push({x: Math.random() * canvas.width, y: 0, speed: 2, size: 30});
+        invaders.push({x: Math.random() * canvas.width, y: 0, speed: 3, size: 30});
     }
 
     for (let i = 0; i < invaders.length; i++) {
         invaders[i].y += invaders[i].speed;
-        if (Math.random() < 0.001) {
+        if (Math.random() < 0.01) {
             invaderBullets.push({
                 x: invaders[i].x + invaders[i].size / 2,
                 y: invaders[i].y + invaders[i].size,
-                size: 5
+                width: 3,
+                height: 8
             });
         }
         if (player.x < invaders[i].x + invaders[i].size &&
@@ -188,7 +188,7 @@ function update() {
         return;
     }
 
-    renderStars(); // Render stars here
+    renderStars();
 
     // Draw player
     ctx.drawImage(playerImage, player.x, player.y, player.width, player.height);
@@ -196,12 +196,12 @@ function update() {
     // Draw bullets
 
     ctx.fillStyle = '#e4d5f7';
-    player.bullets.forEach(b => ctx.fillRect(b.x, b.y, b.size, b.size));
+    player.bullets.forEach(b => ctx.fillRect(b.x, b.y, b.width, b.height));
 
 
     // Draw invader bullets
     ctx.fillStyle = '#e8449c';
-    invaderBullets.forEach(b => ctx.fillRect(b.x, b.y, b.size, b.size));
+    invaderBullets.forEach(b => ctx.fillRect(b.x, b.y, b.width, b.height));
 
     // Draw invaders
 
@@ -250,7 +250,7 @@ function checkOrientation() {
 
 window.addEventListener('load', checkOrientation);
 window.addEventListener('resize', function () {
-    // Refresh the page after a delay to make sure new orientation is correctly detected
+
     setTimeout(checkOrientation, 200);
 }, false);
 

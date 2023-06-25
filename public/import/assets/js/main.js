@@ -358,7 +358,6 @@
             moonElement.classList.add("visible");
         }
     }
-
     checkSlideInVisibilityRightLeftMoon();
 
 
