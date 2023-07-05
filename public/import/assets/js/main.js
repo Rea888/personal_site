@@ -381,7 +381,7 @@
 
 
     /**
-     * spaceX game
+     * SpaceX game
      */
 
     var scaleFactor = 1;
@@ -451,8 +451,7 @@
             }
         }
 
-        var invaders = [];
-        var invaderBullets = [];
+
 
         function initializeGame() {
             var player = {
@@ -465,6 +464,8 @@
             var score = 0;
             var hearts = 3;
             var invaderBulletSpeed = 3;
+            var invaders = [];
+            var invaderBullets = [];
 
             canvas.addEventListener('mousemove', function (e) {
                 var nextX = e.clientX - canvas.offsetLeft - player.width / 2;
@@ -507,6 +508,7 @@
                         player.y < invaders[i].y + invaders[i].size &&
                         player.y + player.height > invaders[i].y) {
 
+
                         hearts -= 1;  // assuming you have a variable named hearts
                         invaders.splice(i, 1); // remove the invader
 
@@ -520,14 +522,15 @@
                     }
                 }
 
-                // Adding invader bullet update
+                // Invader bullets collision with player
                 for (var i = invaderBullets.length - 1; i >= 0; i--) {
                     var b = invaderBullets[i];
                     b.y += b.speed;
 
-                    if (player.x < b.x + b.size &&
+                    // If bullet hits player
+                    if (player.x < b.x + b.width &&
                         player.x + player.width > b.x &&
-                        player.y < b.y + b.size &&
+                        player.y < b.y + b.height &&
                         player.y + player.height > b.y) {
 
                         hearts -= 1;
@@ -542,7 +545,7 @@
                         continue;
                     }
 
-                    if (b.y > canvas.height) {  // Removing if it's out of the screen
+                    if (b.y > canvas.height) {
                         invaderBullets.splice(i, 1);
                     }
                 }
@@ -565,6 +568,7 @@
 
                     if (b.y < 0) player.bullets.splice(i, 1);
                 }
+
 
                 // Update the stars position
                 updateStars();
@@ -606,16 +610,16 @@
                 }
 
                 // Render invader bullets
-                ctx.fillStyle = '#e8449c'; // Set color to pink
+                ctx.fillStyle = '#e8449c';
                 for (var i = 0; i < invaderBullets.length; i++) {
-                    var bullet = invaderBullets[i];
-                    ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height); // Use height and width
+                    var bulletInvader = invaderBullets[i];
+                    ctx.fillRect(bulletInvader.x, bulletInvader.y, bulletInvader.width, bulletInvader.height);
                 }
 
                 // Render score
                 ctx.fillStyle = '#fff';
                 ctx.font = '30px Arial';
-                ctx.textAlign = 'right';  // Align the text to the right
+                ctx.textAlign = 'right';
                 ctx.fillText('Score: ' + score, canvas.width - 10, 30);
 
 
@@ -641,7 +645,7 @@
                 ctx.font = '40px Arial';
                 ctx.fillText('Final Score: ' + score, canvas.width / 2, canvas.height / 2 + 60);
 
-                score = 0; // Reset the score for the next game
+                score = 0;
             }
 
             update();
@@ -650,7 +654,7 @@
         startButton.addEventListener('click', function () {
             if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
                 // If on mobile or tablet, redirect to the game blade
-                window.location.href = '/game'; // Modify this according to the actual path to your game blade
+                window.location.href = '/game';
             } else {
                 generateStars();
                 canvas.style.display = 'block';
