@@ -358,6 +358,7 @@
             moonElement.classList.add("visible");
         }
     }
+
     checkSlideInVisibilityRightLeftMoon();
 
 
@@ -384,12 +385,7 @@
      * SpaceX game
      */
 
-    var scaleFactor = 1;
-    let fullHeartImg = new Image();
-    fullHeartImg.src = 'import/assets/img/heart.png';
-
-    let emptyHeartImg = new Image();
-    emptyHeartImg.src = 'import/assets/img/emptyheart.png';
+    let scaleFactor = 1;
 
     function adjustCanvasSize(canvas) {
         if (window.innerWidth <= 768) {
@@ -407,17 +403,19 @@
         }
     }
 
-    var canvas = document.getElementById('game');
+    let canvas = document.getElementById('game');
     adjustCanvasSize(canvas);
 
-
     document.addEventListener('DOMContentLoaded', function () {
-        var startButton = document.getElementById('startGameButton');
-        var restartButton = document.getElementById('restartGameButton');
-        var canvas = document.getElementById('game');
-        var ctx = canvas.getContext('2d');
 
-        var stars = [];
+        let canvas = document.getElementById('game');
+        let ctx = canvas.getContext('2d');
+        let stars = [];
+        let offscreenCanvas = document.createElement('canvas');
+        offscreenCanvas.width = canvas.width;
+        offscreenCanvas.height = canvas.height;
+        let offscreenCtx = offscreenCanvas.getContext('2d');
+
 
         function generateStars() {
             const starCount = 200;
@@ -429,6 +427,10 @@
                     opacity: Math.random(),
                     speed: Math.random() * 1.5 + 1
                 });
+            }
+            for (let star of stars) {
+                offscreenCtx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                offscreenCtx.fillRect(star.x, star.y, star.size, star.size);
             }
         }
 
@@ -452,23 +454,28 @@
         }
 
 
-
         function initializeGame() {
-            var player = {
+            let player = {
                 x: canvas.width / 2 - (20 * scaleFactor),
                 y: canvas.height - (60 * scaleFactor),
                 width: 50 * scaleFactor,
                 height: 50 * scaleFactor,
                 bullets: []
             };
-            var score = 0;
-            var hearts = 3;
-            var invaderBulletSpeed = 3;
-            var invaders = [];
-            var invaderBullets = [];
+            let score = 0;
+            let hearts = 3;
+            let invaderBulletSpeed = 3;
+            let invaders = [];
+            let invaderBullets = [];
 
-            canvas.addEventListener('mousemove', function (e) {
-                var nextX = e.clientX - canvas.offsetLeft - player.width / 2;
+            let playerImage = new Image();
+            playerImage.src = 'import/assets/img/starShip.png';
+
+            let invaderImage = new Image();
+            invaderImage.src = 'import/assets/img/invader1.png';
+
+            canvas.addEventListener('mousemove', debounce(function (e) {
+                let nextX = e.clientX - canvas.offsetLeft - player.width / 2;
 
                 if (nextX < 0) {
                     nextX = 0;
@@ -476,7 +483,17 @@
                     nextX = canvas.width - player.width;
                 }
                 player.x = nextX;
-            });
+            }, 10));
+
+            function debounce(func, delay) {
+                let debounceTimer;
+                return function () {
+                    const context = this;
+                    const args = arguments;
+                    clearTimeout(debounceTimer);
+                    debounceTimer = setTimeout(() => func.apply(context, args), delay);
+                }
+            }
 
 
             canvas.addEventListener('click', function (e) {
@@ -523,8 +540,8 @@
                 }
 
                 // Invader bullets collision with player
-                for (var i = invaderBullets.length - 1; i >= 0; i--) {
-                    var b = invaderBullets[i];
+                for (let i = invaderBullets.length - 1; i >= 0; i--) {
+                    let b = invaderBullets[i];
                     b.y += b.speed;
 
                     // If bullet hits player
@@ -550,12 +567,12 @@
                     }
                 }
 
-                for (var i = player.bullets.length - 1; i >= 0; i--) {
-                    var b = player.bullets[i];
+                for (let i = player.bullets.length - 1; i >= 0; i--) {
+                    let b = player.bullets[i];
                     b.y -= b.speed;
 
-                    for (var j = invaders.length - 1; j >= 0; j--) {
-                        var invader = invaders[j];
+                    for (let j = invaders.length - 1; j >= 0; j--) {
+                        let invader = invaders[j];
                         if (b.x > invader.x && b.x < invader.x + invader.size &&
                             b.y > invader.y && b.y < invader.y + invader.size) {
                             invaders.splice(j, 1);
@@ -573,46 +590,44 @@
                 // Update the stars position
                 updateStars();
 
-                render();
-                requestAnimationFrame(update);
+                render(update);
             }
 
+            let fullHeartImg = new Image();
+            fullHeartImg.src = 'import/assets/img/heart.png';
 
-            function render() {
+            let emptyHeartImg = new Image();
+            emptyHeartImg.src = 'import/assets/img/emptyheart.png';
+
+            function render(callback) {
+
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 // Render stars
                 renderStars();
 
-                // Render player
-                var playerImage = new Image();
-                playerImage.src = 'import/assets/img/starShip.png';
 
                 // Render player using the image
                 ctx.drawImage(playerImage, player.x, player.y, player.width, player.height);
 
 
-                // Render invaders
-                var invaderImage = new Image();
-                invaderImage.src = 'import/assets/img/invader1.png';
-
                 // Render invaders using the image
-                for (var i = 0; i < invaders.length; i++) {
-                    var invader = invaders[i];
+                for (let i = 0; i < invaders.length; i++) {
+                    let invader = invaders[i];
                     ctx.drawImage(invaderImage, invader.x, invader.y, invader.size, invader.size);
                 }
 
                 // Render bullets
                 ctx.fillStyle = '#e4d5f7';
-                for (var i = 0; i < player.bullets.length; i++) {
-                    var bullet = player.bullets[i];
+                for (let i = 0; i < player.bullets.length; i++) {
+                    let bullet = player.bullets[i];
                     ctx.fillRect(bullet.x, bullet.y, 2, 10);
                 }
 
                 // Render invader bullets
                 ctx.fillStyle = '#e8449c';
-                for (var i = 0; i < invaderBullets.length; i++) {
-                    var bulletInvader = invaderBullets[i];
+                for (let i = 0; i < invaderBullets.length; i++) {
+                    let bulletInvader = invaderBullets[i];
                     ctx.fillRect(bulletInvader.x, bulletInvader.y, bulletInvader.width, bulletInvader.height);
                 }
 
@@ -624,15 +639,16 @@
 
 
                 // Draw hearts
-                var heartSize = 30;
-                var heartGap = 10;
-                var heartY = 10;
-                var heartX = 10;
+                let heartSize = 30;
+                let heartGap = 10;
+                let heartY = 10;
+                let heartX = 10;
 
-                for (var i = 0; i < 3; i++) {
-                    var heartImg = i < hearts ? fullHeartImg : emptyHeartImg;
+                for (let i = 0; i < 3; i++) {
+                    let heartImg = i < hearts ? fullHeartImg : emptyHeartImg;
                     ctx.drawImage(heartImg, heartX + i * (heartSize + heartGap), heartY, heartSize, heartSize);
                 }
+                requestAnimationFrame(callback);
             }
 
 
@@ -650,6 +666,9 @@
 
             update();
         }
+
+        let startButton = document.getElementById('startGameButton');
+        let restartButton = document.getElementById('restartGameButton');
 
         startButton.addEventListener('click', function () {
             if (window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
