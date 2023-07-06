@@ -243,7 +243,7 @@
      * dots
      */
     function generateDots() {
-        const dotCount = 200; // Number of dots to generate
+        const dotCount = 200;
         const container = document.getElementById('portfolio');
         const containerWidth = container.clientWidth;
 
@@ -474,42 +474,36 @@
             let invaderImage = new Image();
             invaderImage.src = 'import/assets/img/invader1.png';
 
-            canvas.addEventListener('mousemove', debounce(function (e) {
-                let nextX = e.clientX - canvas.offsetLeft - player.width / 2;
+            let targetX = player.x;
 
-                if (nextX < 0) {
-                    nextX = 0;
-                } else if (nextX > canvas.width - player.width) {
-                    nextX = canvas.width - player.width;
+            canvas.addEventListener('mousemove', function (e) {
+                targetX = e.clientX - canvas.offsetLeft - player.width / 2;
+                if (targetX < 0) {
+                    targetX = 0;
+                } else if (targetX > canvas.width - player.width) {
+                    targetX = canvas.width - player.width;
                 }
-                player.x = nextX;
-            }, 10));
-
-            function debounce(func, delay) {
-                let debounceTimer;
-                return function () {
-                    const context = this;
-                    const args = arguments;
-                    clearTimeout(debounceTimer);
-                    debounceTimer = setTimeout(() => func.apply(context, args), delay);
-                }
-            }
-
+            });
 
             canvas.addEventListener('click', function (e) {
                 player.bullets.push({x: player.x + player.width / 2, y: player.y, speed: 5});
             });
 
             function update() {
+
+                let lerpFactor = 0.2;
+                player.x += (targetX - player.x) * lerpFactor;
+
+
                 // Invaders and invader bullets logic
                 if (Math.random() < 0.05) {
-                    invaders.push({x: Math.random() * canvas.width, y: 0, speed: 2, size: 30});
+                    invaders.push({x: Math.random() * canvas.width, y: 0, speed: 1, size: 30});
                 }
 
                 for (let i = invaders.length - 1; i >= 0; i--) {
                     invaders[i].y += invaders[i].speed;
 
-                    if (Math.random() < 0.01) {
+                    if (Math.random() < 0.005) {
                         invaderBullets.push({
                             x: invaders[i].x + invaders[i].size / 2,
                             y: invaders[i].y + invaders[i].size,
@@ -526,11 +520,11 @@
                         player.y + player.height > invaders[i].y) {
 
 
-                        hearts -= 1;  // assuming you have a variable named hearts
-                        invaders.splice(i, 1); // remove the invader
+                        hearts -= 1;
+                        invaders.splice(i, 1);
 
                         if (hearts <= 0) {
-                            hearts = 0; //preventing hearts go below 0
+                            hearts = 0;
                             renderGameOver();
                             return;
                         }
@@ -587,7 +581,6 @@
                 }
 
 
-                // Update the stars position
                 updateStars();
 
                 render(update);
@@ -702,6 +695,7 @@
             window.open(url, '_blank');
         });
     });
+
     /**
      * Easy selector helper function
      */
@@ -712,8 +706,8 @@
         } else {
             return document.querySelector(el)
         }
-
     }
+
     /**
      * Easy event listener function
      */
@@ -728,6 +722,7 @@
         }
 
     }
+
     /**
      * Easy on scroll event listener
      */
@@ -735,6 +730,7 @@
         el.addEventListener('scroll', listener)
 
     }
+
     /**
      * Navbar links active state on scroll
      */
@@ -755,6 +751,7 @@
     window.addEventListener('load', navbarlinksActive)
 
     onscroll(document, navbarlinksActive)
+
     /**
      * Scrolls to an element with header offset
      */
@@ -776,7 +773,6 @@
     /**
      * Toggle .header-scrolled class to #header when page is scrolled
      */
-
     let selectHeader = select('#header')
     if (selectHeader) {
         const headerScrolled = () => {

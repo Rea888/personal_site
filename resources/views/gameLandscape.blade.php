@@ -27,6 +27,6 @@
     </div>
 </div>
 
-<script src="{{asset('import/assets/js/gameLandscape.js')}}"></script>
+<script src="{{asset('import/assets/js_mini/gameLandscape.min.js')}}"></script>
 </body>
 </html>

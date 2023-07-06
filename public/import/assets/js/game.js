@@ -44,7 +44,7 @@ function generateStars() {
             y: Math.random() * canvas.height,
             size: Math.random() * 2,
             opacity: Math.random(),
-            speed: Math.random() * 1.5 + 1
+            speed: Math.random() * 5 + 1
         });
     }
 }
@@ -56,7 +56,7 @@ function updateStars() {
             star.y = 0;
             star.x = Math.random() * canvas.width;
             star.size = Math.random() * 2;
-            star.speed = Math.random() * 1.5 + 1;
+            star.speed = Math.random() * 5 + 1;
         }
     }
 }
@@ -144,7 +144,7 @@ function update() {
 
     // Update invader bullets
     for (let i = 0; i < invaderBullets.length; i++) {
-        invaderBullets[i].y += 5;
+        invaderBullets[i].y += 10;
 
         if (invaderBullets[i].x < player.x + player.width &&
             invaderBullets[i].x + invaderBullets[i].width > player.x &&
@@ -159,7 +159,7 @@ function update() {
 
     // Update invaders
     if (Math.random() < 0.02) {
-        invaders.push({x: Math.random() * canvas.width, y: 0, speed: 3, size: 30});
+        invaders.push({x: Math.random() * canvas.width, y: 0, speed: 6, size: 30});
     }
 
     for (let i = 0; i < invaders.length; i++) {
@@ -226,7 +226,6 @@ function update() {
     ctx.fillText("Score: " + score, canvas.width - 10, 30);
 
 
-    // Loop
     requestAnimationFrame(update);
 }
 

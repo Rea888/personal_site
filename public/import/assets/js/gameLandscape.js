@@ -35,26 +35,25 @@ let stars;
 
 function generateStars() {
     stars = [];
-    const starCount = 100; // You can adjust this number based on your preference
+    const starCount = 100;
     for (let i = 0; i < starCount; i++) {
         stars.push({
-            x: Math.random() * canvas.width, // This line should remain the same. The stars should still start from random x-positions
-            y: Math.random() * canvas.height,
+            x: Math.random() * canvas.width,
             size: Math.random() * 2,
             opacity: Math.random(),
-            speed: Math.random() * 0.5 + 0.5 // Speed at which the star moves
+            speed: Math.random() * 5 + 1
         });
     }
 }
 
 function updateStars() {
     for (let star of stars) {
-        star.x -= star.speed; // Change this line to move the star to the left
-        if (star.x < 0) { // When the star's x is less than 0, reset it to the right side of the canvas
+        star.x -= star.speed;
+        if (star.x < 0) {
             star.x = canvas.width;
             star.y = Math.random() * canvas.height;
             star.size = Math.random() * 2;
-            star.speed = Math.random() * 0.5 + 0.5;
+            star.speed = Math.random() * 5 + 1;
         }
     }
 }
@@ -150,7 +149,7 @@ function update() {
 
     // Update invader bullets
     for (let i = 0; i < invaderBullets.length; i++) {
-        invaderBullets[i].x -= 5;
+        invaderBullets[i].x -= 11;
 
         if (invaderBullets[i].x < player.x + player.size &&
             invaderBullets[i].x + invaderBullets[i].size > player.x &&
@@ -164,7 +163,7 @@ function update() {
 
     // Update invaders
     if (Math.random() < 0.02) {
-        invaders.push({x: canvas.width, y: Math.random() * canvas.height, speed: 2, size: 30});
+        invaders.push({x: canvas.width, y: Math.random() * canvas.height, speed: 5, size: 30});
     }
 
     for (let i = 0; i < invaders.length; i++) {
@@ -224,7 +223,6 @@ function update() {
     ctx.fillText("Score: " + score, canvas.width - 10, 30);
 
 
-    // Loop
     requestAnimationFrame(update);
 }
 
