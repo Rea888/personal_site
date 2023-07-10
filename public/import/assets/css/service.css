@@ -60,7 +60,9 @@
 
 .services-slider .swiper-pagination .swiper-pagination-bullet-active {
     background-color: black;
+    box-shadow: 0 0 10px purple, 0 0 20px purple, 0 0 30px purple, 0 0 40px purple;
 }
+
 
 #bottomSkills {
     position: relative;
