@@ -199,14 +199,23 @@
 
                     <div class="swiper-slide">
                         <div class="services-block">
-                            <img src="{{asset('import/assets/img/docker.png')}}" alt=""
-                                 class="img-fluid" height="58" width="58">
-                            <span id="skills">Docker</span>
-                            <p class="separator" id="skills2">Docker is an amazing open-source tool. It creates a
+                            <a href="https://github.com/Rea888/contact_page/blob/master/docker-compose.yml"><img
+                                    src="{{asset('import/assets/img/docker.png')}}" alt=""
+                                    class="img-fluid" height="58" width="58"></a>
+                            <a href="https://github.com/Rea888/contact_page/blob/master/docker-compose.yml"><span
+                                    id="skills">Docker</span></a>
+                            <p class="separator" id="skills2">Docker is an amazing open-source tool. It creates
+                                a
                                 special environment
-                                called a container, which lets me
-                                package my applications along with everything they need to run smoothly. This means I
-                                can ensure that my code works consistently across different systems, without worrying
+                                called a <a
+                                    href="https://github.com/Rea888/contact_page/blob/master/docker-compose.yml"
+                                    class="sk" id="glow">container</a>,
+                                which lets me
+                                package my applications along with everything they need to run smoothly. This
+                                means
+                                I
+                                can ensure that my code works consistently across different systems, without
+                                worrying
                                 about compatibility issues.</p>
                         </div>
                     </div><!-- End testimonial item -->
@@ -413,8 +422,10 @@
                                     <a href="https://github.com/Rea888/" class="glow-on-hover">Git</a>
                                     <a href="https://github.com/Rea888/myfirstproject/tree/master"
                                        class="glow-on-hover">Java</a>
-                                    <a href="https://github.com/Rea888/personal_site" class="glow-on-hover">Docker</a>
-                                    <a href="https://github.com/Rea888/personal_site" class="glow-on-hover">Jenkins</a>
+                                    <a href="https://github.com/Rea888/contact_page/blob/master/docker-compose.yml"
+                                       class="glow-on-hover">Docker</a>
+                                    <a href="https://github.com/Rea888/personal_site/blob/master/Jenkinsfile"
+                                       class="glow-on-hover">Jenkins</a>
 
                                     <a href="https://github.com/Rea888/personal_site/tree/master/public/import/assets/css"
                                        class="glow-on-hover">CSS</a><br class="brCv">
@@ -423,7 +434,8 @@
                                     <a href="https://github.com/Rea888/personal_site/blob/master/resources/views/greetings.blade.php"
                                        class="glow-on-hover">Bootstrap</a>
                                     <a href="https://github.com/Rea888/personal_site" class="glow-on-hover">AWS</a>
-                                    <a href="https://github.com/Rea888/personal_site" class="glow-on-hover">CI/CD</a>
+                                    <a href="https://github.com/Rea888/contact_page/blob/master/Jenkinsfile"
+                                       class="glow-on-hover">CI/CD</a>
                                 </p>
 
                                 <h3 id="cvh" style="color: #602a70"><u>LANGUAGES</u></h3>

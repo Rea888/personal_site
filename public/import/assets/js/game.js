@@ -156,9 +156,8 @@ function update() {
         }
     }
 
-
     // Update invaders
-    if (Math.random() < 0.02) {
+    if (Math.random() < 0.05) {
         invaders.push({x: Math.random() * canvas.width, y: 0, speed: 6, size: 30});
     }
 
