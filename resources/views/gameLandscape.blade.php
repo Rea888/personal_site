@@ -7,7 +7,7 @@
 
     <title>Game</title>
     <!-- Include your CSS here -->
-    <link rel="stylesheet" href="{{asset('import/assets/css/gameLandscape.css')}}">
+    <link rel="stylesheet" href="{{asset('https://static.viktoriarakhely.eu/assets/css/gameLandscape.css')}}">
 </head>
 <body>
 
@@ -27,6 +27,6 @@
     </div>
 </div>
 
-<script src="{{asset('import/assets/js_mini/gameLandscape.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/js_mini/gameLandscape.min.js')}}"></script>
 </body>
 </html>

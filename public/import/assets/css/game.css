@@ -15,9 +15,9 @@ body, html, canvas {
 
 
 #container {
-    position: relative; /* Changed to relative */
+    position: relative;
     height: 87vh;
-    width: 100vw; /* Added 100% of the viewport width */
+    width: 100vw;
     overflow: hidden;
 
 }
@@ -28,12 +28,12 @@ canvas {
 }
 
 #startButton {
-    position: absolute; /* Changed to absolute */
-    z-index: 10; /* Keep it above the canvas */
-    bottom: 20px; /* Position it at the bottom of the container */
-    left: 50%; /* Center it horizontally */
-    transform: translateX(-50%); /* Adjust for the button's width */
-    padding: 10px 20px; /* Give it some padding */
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
 }
 
 
@@ -52,7 +52,7 @@ canvas {
 
 @font-face {
     font-family: 'SpaceLight';
-    src: url(../fonts/Orbitron.ttf);
+    src: url('https://static.viktoriarakhely.eu/assets/fonts/Orbitron.ttf');
 }
 
 .text {
@@ -200,11 +200,11 @@ canvas {
 
 #game {
     background-color: #111;
-    position: absolute; /* Changed to absolute */
-    top: 0; /* Align to the top of the container */
-    left: 0; /* Align to the left of the container */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: calc(100vh - 60px); /* Leave space for the button */
+    height: calc(100vh - 60px);
     padding: 0;
     margin: 0;
 }

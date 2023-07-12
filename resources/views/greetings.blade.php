@@ -10,7 +10,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link rel="icon" type="image/x-icon" href="{{asset('import/assets/img/logo.png')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('https://static.viktoriarakhely.eu/assets/img/logo.png')}}">
 
     <!-- Google Fonts -->
     <link
@@ -18,26 +18,31 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="{{asset('import/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+          rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+          rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/vendor/boxicons/css/boxicons.min.css')}}"
+          rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/vendor/glightbox/css/glightbox.min.css')}}"
+          rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/vendor/swiper/swiper-bundle.min.css')}}"
+          rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 
 
     <!-- Main CSS File -->
-    <link href="{{asset('import/assets/css/about.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/contacts.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/cv.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/font.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/hero.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/navbar.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/screenGame.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/service.css')}}" rel="stylesheet">
-    <link href="{{asset('import/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/about.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/contacts.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/cv.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/font.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/hero.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/navbar.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/screenGame.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/service.css')}}" rel="stylesheet">
+    <link href="{{asset('https://static.viktoriarakhely.eu/assets/css/style.css')}}" rel="stylesheet">
 
 
 </head>
@@ -48,7 +53,7 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
-        <a href="/" class="logo"><img src="{{asset('import/assets/img/logo.png')}}" alt=""
+        <a href="/" class="logo"><img src="{{asset('https://static.viktoriarakhely.eu/assets/img/logo.png')}}" alt=""
                                       class="img-fluid"></a>
 
         <nav id="navbar" class="navbar">
@@ -99,7 +104,8 @@
                 <div class="col-lg-4 ">
                     <div class="div-img-bg">
                         <div class="about-img">
-                            <img src="{{asset('import/assets/img/me.jpg')}}" class="img-responsive" alt="me" id="me">
+                            <img src="{{asset('https://static.viktoriarakhely.eu/assets/img/me.jpg')}}"
+                                 class="img-responsive" alt="me" id="me">
                         </div>
                     </div>
                 </div>
@@ -169,8 +175,9 @@
 
                     <div class="swiper-slide">
                         <div class="services-block" id="skills">
-                            <a href="https://github.com/Rea888"><img src="{{asset('import/assets/img/git.png')}}" alt=""
-                                                                     class="img-fluid" height="50" width="50"></a>
+                            <a href="https://github.com/Rea888"><img
+                                    src="{{asset('https://static.viktoriarakhely.eu/assets/img/git.png')}}" alt=""
+                                    class="img-fluid" height="50" width="50"></a>
 
                             <a href="https://github.com/Rea888"><span id="skills">Git</span></a>
                             <p class="separator" id="skills2">Git helps manage my code changes, work with
@@ -185,7 +192,7 @@
                     <div class="swiper-slide">
                         <div class="services-block">
                             <a href="https://github.com/Rea888/Articles"><img
-                                    src="{{asset('import/assets/img/php.png')}}" alt=""
+                                    src="{{asset('https://static.viktoriarakhely.eu/assets/img/php.png')}}" alt=""
                                     class="img-fluid" height="80" width="80"></a>
                             <a href="https://github.com/Rea888/Articles"><span id="skills">PHP</span></a>
                             <p class="separator" id="skills2">I built a foundation in PHP with this <a
@@ -200,7 +207,7 @@
                     <div class="swiper-slide">
                         <div class="services-block">
                             <a href="https://github.com/Rea888/contact_page/blob/master/docker-compose.yml"><img
-                                    src="{{asset('import/assets/img/docker.png')}}" alt=""
+                                    src="{{asset('https://static.viktoriarakhely.eu/assets/img/docker.png')}}" alt=""
                                     class="img-fluid" height="58" width="58"></a>
                             <a href="https://github.com/Rea888/contact_page/blob/master/docker-compose.yml"><span
                                     id="skills">Docker</span></a>
@@ -223,7 +230,7 @@
                     <div class="swiper-slide">
                         <div class="services-block">
                             <a href="https://github.com/Rea888/personal_site/blob/master/Jenkinsfile"><img
-                                    src="{{asset('import/assets/img/jenkins.png')}}" alt=""
+                                    src="{{asset('https://static.viktoriarakhely.eu/assets/img/jenkins.png')}}" alt=""
                                     class="img-fluid" height="45" width="45"></a>
                             <a href="https://github.com/Rea888/personal_site/blob/master/Jenkinsfile"><span id="skills">Jenkins</span></a>
                             <p class="separator" id="skills2">Jenkins is a well-known open-source tool for
@@ -239,7 +246,7 @@
                     <div class="swiper-slide">
                         <div class="services-block">
                             <a href="https://github.com/Rea888/planetSeeker/blob/master/app/ApiClient/Meteo/AbstractMeteoDataMapper.php"><img
-                                    src="{{asset('import/assets/img/solid.png')}}" alt=""
+                                    src="{{asset('https://static.viktoriarakhely.eu/assets/img/solid.png')}}" alt=""
                                     class="img-fluid" height="150" width="150"></a>
                             <a href="https://github.com/Rea888/planetSeeker/blob/master/app/ApiClient/Meteo/AbstractMeteoDataMapper.php"><span
                                     id="skills">SOLID</span></a>
@@ -257,7 +264,7 @@
                     <div class="swiper-slide">
                         <div class="services-block">
                             <a href="https://github.com/Rea888/planetSeeker/tree/master/app/Service"><img
-                                    src="{{asset('import/assets/img/oop.PNG')}}" alt=""
+                                    src="{{asset('https://static.viktoriarakhely.eu/assets/img/oop.PNG')}}" alt=""
                                     class="img-fluid" height="85" width="85"></a>
                             <a href="https://github.com/Rea888/planetSeeker/tree/master/app/Service"><span id="skills">OOP</span></a>
                             <p class="separator" id="skills2">I find Object-Oriented Programming (OOP) super useful
@@ -299,7 +306,7 @@
         </div>
         <div class="container-fluid" id="planetSide">
             <div class="background-planetSide" id="planet"
-                 style="background-image: url({{asset('import/assets/img/planetSide.png')}})"></div>
+                 style="background-image: url({{asset('https://static.viktoriarakhely.eu/assets/img/planetSide.png')}})"></div>
             <div class="container" id="whole">
                 <div id="intro">
                     <h2 style="color: white">Viktoria Rakhely</h2>
@@ -322,19 +329,21 @@
                                     <h4 style="color: white" class="first_line_c"><a
                                             href="mailto:info@viktoriarakhely.eu"
                                             class="contact"><img
-                                                src="{{asset('import/assets/img/envelope.svg')}}" alt="SVG Image"
+                                                src="{{asset('https://static.viktoriarakhely.eu/assets/img/envelope.svg')}}"
+                                                alt="SVG Image"
                                                 style="margin-right: 1%"
                                                 class="contact"><b>info@viktoriarakhely.eu</b></a>
                                     </h4>
                                     <h4 style="color: white" class="second_line_c"><img
-                                            src="{{asset('import/assets/img/location.svg')}}"
+                                            src="{{asset('https://static.viktoriarakhely.eu/assets/img/location.svg')}}"
                                             alt="SVG Image"
                                             style="margin-right: 1%"><b>Trierweiler, Germany</b>
                                     </h4>
                                     <h4 style="color: black" class="third_line_c"><a
                                             href="https://www.linkedin.com/in/viktoriarakhely/"
                                             class="contact"><img
-                                                src="{{asset('import/assets/img/linkedin.svg')}}" alt="SVG Image"
+                                                src="{{asset('https://static.viktoriarakhely.eu/assets/img/linkedin.svg')}}"
+                                                alt="SVG Image"
                                                 style="margin-right: 1%"><b>linkedin.com/in/viktoriarakhely</b></a></h4>
                                 </div>
                             </div>
@@ -343,16 +352,18 @@
                                 <div class="about-descr">
 
                                     <h4 style="color: white" class="first_line_c"><img
-                                            src="{{asset('import/assets/img/phone.svg')}}"
+                                            src="{{asset('https://static.viktoriarakhely.eu/assets/img/phone.svg')}}"
                                             alt="SVG Image"><b>+49 1520 9732046</b></h4>
                                     <h4 style="color: black" class="second_line_c"><a href="https://viktoriarakhely.eu/"
                                                                                       class="contact"><img
-                                                src="{{asset('import/assets/img/hand.svg')}}" alt="SVG Image"
+                                                src="{{asset('https://static.viktoriarakhely.eu/assets/img/hand.svg')}}"
+                                                alt="SVG Image"
                                                 style="margin-right: 1%" class="contact"><b>viktoriarakhely.eu</b></a>
                                     </h4>
                                     <h4 style="color: black" class="third_line_c"><a href="https://github.com/Rea888"
                                                                                      class="contact"><img
-                                                src="{{asset('import/assets/img/github.svg')}}" alt="SVG Image"
+                                                src="{{asset('https://static.viktoriarakhely.eu/assets/img/github.svg')}}"
+                                                alt="SVG Image"
                                                 style="margin-right: 1%"><b>github.com/Rea888</b></a></h4>
                                 </div>
                             </div>
@@ -575,7 +586,7 @@
                 </div>
             </div>
             <div class="background-moon" id="moon"
-                 style="background-image: url({{asset('import/assets/img/moon.png')}});">
+                 style="background-image: url({{asset('https://static.viktoriarakhely.eu/assets/img/moon.png')}});">
             </div>
 
             <div class=" section-title text-center" id="downloadPDF">
@@ -695,16 +706,17 @@
 
 
 <!-- Vendor JS Files -->
-<script src="{{asset('import/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('import/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-<script src="{{asset('import/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-<script src="{{asset('import/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('import/assets/vendor/typed.js/typed.min.js')}}"></script>
-<script src="{{asset('import/assets/vendor/php-email-form/validate.js')}}"></script>
+<script
+    src="{{asset('https://static.viktoriarakhely.eu/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/vendor/typed.js/typed.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/vendor/php-email-form/validate.js')}}"></script>
 
 <!-- Template Main JS File -->
-<script src="{{asset('import/assets/js_mini/main.min.js')}}"></script>
-<script src="{{asset('import/assets/js_mini/homeScript.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/js_mini/main.min.js')}}"></script>
+<script src="{{asset('https://static.viktoriarakhely.eu/assets/js_mini/homeScript.min.js')}}"></script>
 
 
 </body>

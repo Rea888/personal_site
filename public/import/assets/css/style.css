@@ -216,7 +216,7 @@ h4 > a, h4 > img {
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
-/*  Navbar fixd page */
+/*  Navbar fixed page */
 .subpage-nav {
     display: block !important;
 }
@@ -279,7 +279,7 @@ h4 > a, h4 > img {
     margin-left: 5px;
 }
 
-/* Commonts */
+/* Comments */
 .comments {
     background: #fff;
 }
@@ -334,7 +334,7 @@ h4 > a, h4 > img {
     padding-left: 10%;
 }
 
-/* Commonts form */
+/* Comments form */
 .cmt {
     background: #fff;
 }
