@@ -529,7 +529,6 @@ portfolio-details {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-in-out;
-    word-break: break-all;
     text-shadow: 0.1em 0.1em 0.1em black,
     -0.1em -0.1em 0.1em black,
     0.1em -0.1em 0.1em black,
