@@ -104,6 +104,22 @@
             padding-bottom: 120px;
             padding-top: 60px;
         }
+
+        #portfolio:before {
+            content: '';
+            position: absolute;
+            top: -160px;
+            left: 0;
+            width: 100%;
+            height: 170px;
+            background-image: url('{{ env('BASE_URL') . env('VERSION_HASH') }}/assets/img/wavesNegative2.svg');
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+            z-index: 1;
+        }
+
     </style>
 
 </head>
@@ -353,7 +369,7 @@
 
     <!-- ======= Portfolio Section ======= -->
     <div id="portfolio" class="paddsection"
-         style="display:block; background-image: url('{{ env('BASE_URL') . env('VERSION_HASH') }}/assets/img/wavesNegative2.svg');">
+         style="display:block;">
         <div class="container-fluid">
             <div class="col-lg-12 text-center">
                 <div class="descr">
