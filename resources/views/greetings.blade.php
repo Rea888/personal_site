@@ -37,7 +37,6 @@
     <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/about.css')}}" rel="stylesheet">
     <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/contacts.css')}}" rel="stylesheet">
     <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/cv.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/font.css')}}" rel="stylesheet">
     <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/hero.css')}}" rel="stylesheet">
     <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/navbar.css')}}" rel="stylesheet">
