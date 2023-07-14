@@ -43,7 +43,7 @@ pipeline {
                 sh 'sed -i \'s/^MAIL_ENCRYPTION=.*$/MAIL_ENCRYPTION=tls/g\' ./.env'
                 sh 'sed -i "s|^MAIL_FROM_ADDRESS=.*$|MAIL_FROM_ADDRESS=|g" ./.env'
                 sh 'sed -i "s|^BASE_URL=.*$|BASE_URL=https://static.viktoriarakhely.eu/|g" ./.env'
-                sh 'sed -i \'s/^VERSION_HASH=.*$/VERSION_HASH=${GIT_COMMIT}/g\' ./.env'
+                sh "sed -i 's/^VERSION_HASH=.*$/VERSION_HASH=${GIT_COMMIT}/g' ./.env"
                 sh 'composer install'
                 sh 'rm -rf .git .gitattributes .gitignore README.md phpunit.xml .editorconfig composer.json composer.lock tests'
                 sh 'cp -r ./ /var/www/viktoriarakhely.eu-$GIT_COMMIT'
