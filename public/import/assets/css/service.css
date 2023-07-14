@@ -1,26 +1,3 @@
-.skillStart:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 170px;
-    background-image: url('https://static.viktoriarakhely.eu/assets/img/waves.svg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-
-}
-
-
-#services {
-    background: url('https://static.viktoriarakhely.eu/assets/img/space.jpg') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-    padding-bottom: 120px;
-    padding-top: 60px;
-}
 
 .services-block span {
     margin: 10px 0;

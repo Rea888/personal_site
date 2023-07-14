@@ -42,12 +42,21 @@ pipeline {
                 sh 'sed -i "s/^MAIL_PASSWORD=.*$/MAIL_PASSWORD=$MAIL_PASSWORD/g" ./.env'
                 sh 'sed -i \'s/^MAIL_ENCRYPTION=.*$/MAIL_ENCRYPTION=tls/g\' ./.env'
                 sh 'sed -i "s|^MAIL_FROM_ADDRESS=.*$|MAIL_FROM_ADDRESS=|g" ./.env'
+                sh 'sed -i "s|^BASE_URL=.*$|BASE_URL=https://static.viktoriarakhely.eu/|g" ./.env'
+                sh 'sed -i \'s/^VERSION_HASH=.*$/VERSION_HASH=$GIT_COMMIT/g\' ./.env'
                 sh 'composer install'
                 sh 'rm -rf .git .gitattributes .gitignore README.md phpunit.xml .editorconfig composer.json composer.lock tests'
                 sh 'cp -r ./ /var/www/viktoriarakhely.eu-$GIT_COMMIT'
                 sh 'ln -sfn /var/www/viktoriarakhely.eu-$GIT_COMMIT /var/www/viktoriarakhely.eu'
                 sh 'php /var/www/viktoriarakhely.eu/artisan ca:cl'
                 sh 'php /var/www/viktoriarakhely.eu/artisan co:cl'
+            }
+        }
+
+        stage('Upload to S3'){
+            steps{
+                withAWS(region:'us-east-1' ,credentials:'jenkins_access') {
+                    s3Upload(file:'assets', bucket:'static-viktoriarakhely', path:'')
             }
         }
 

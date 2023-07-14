@@ -50,11 +50,6 @@ canvas {
     pointer-events: none;
 }
 
-@font-face {
-    font-family: 'SpaceLight';
-    src: url('https://static.viktoriarakhely.eu/assets/fonts/Orbitron.ttf');
-}
-
 .text {
 
     text-transform: uppercase;
