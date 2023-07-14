@@ -56,7 +56,7 @@ pipeline {
         stage('Upload to S3'){
             steps{
                 withAWS(credentials:'jenkins_access', region:'us-east-1') {
-                    s3Upload(file:'assets', bucket:'static-viktoriarakhely', path:'')
+                    s3Upload(file:'public/import/assets', bucket:'static-viktoriarakhely', path:'')
                 }
             }
         }
