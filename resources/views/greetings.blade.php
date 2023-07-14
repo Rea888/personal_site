@@ -353,7 +353,7 @@
 
     <!-- ======= Portfolio Section ======= -->
     <div id="portfolio" class="paddsection"
-         style="display:block; background-image: url('{{ env('BASE_URL') . env('VERSION_HASH') }}/assets/img/oop.PNG');">
+         style="display:block; background-image: url('{{ env('BASE_URL') . env('VERSION_HASH') }}/assets/img/wavesNegative');">
         <div class="container-fluid">
             <div class="col-lg-12 text-center">
                 <div class="descr">
