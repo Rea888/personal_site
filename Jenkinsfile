@@ -53,13 +53,14 @@ pipeline {
             }
         }
 
-        stage('Upload to S3'){
-            steps{
-                withAWS(region:'us-east-1' ,credentials:'jenkins_access') {
-                    s3Upload(file:'assets', bucket:'static-viktoriarakhely', path:'')
-                }
-            } 
-        }
+      stage('Upload to S3'){
+          steps{
+              withAWS(region:'us-east-1' ,credentials:'jenkins_access') {
+                  s3Upload(bucket:'static-viktoriarakhely', path:'public/import/assets', includePathPattern:'**/*')
+              }
+          }
+      }
+
 
         stage('Clean Old Build Directories') {
             steps {
