@@ -57,7 +57,8 @@ pipeline {
             steps{
                 withAWS(region:'us-east-1' ,credentials:'jenkins_access') {
                     s3Upload(file:'assets', bucket:'static-viktoriarakhely', path:'')
-            }
+                }
+            } 
         }
 
         stage('Clean Old Build Directories') {
