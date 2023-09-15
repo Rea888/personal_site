@@ -93,17 +93,27 @@
             -moz-background-size: cover;
             background-size: cover;
             -o-background-size: cover;
+            z-index: 1;
 
         }
 
 
         #services {
-            background: url('{{ env('BASE_URL') . env('VERSION_HASH') }}/assets/img/space.jpg') no-repeat center center fixed;
-            background-size: cover;
             position: relative;
             padding-bottom: 120px;
             padding-top: 60px;
         }
+
+        .backgroundSpace {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
 
         #portfolio:before {
             content: '';
@@ -243,6 +253,14 @@
 
     <!-- ======= Services Section ======= -->
     <div class="skillStart" id="services">
+        <picture>
+            <source media="(max-width: 920px)"
+                    srcset="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/img/space_small.jpg')}}">
+            <source media="(min-width: 921px)"
+                    srcset="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/img/space.jpg')}}">
+            <img src="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/img/space.jpg')}}" class="backgroundSpace"
+                 alt="space">
+        </picture>
 
         <div class="container-fluid" id="bottomSkills">
 
@@ -628,8 +646,8 @@
                                 <p style="color: #e4d5f7">Developed a website for a massage salon utilizing Laravel9 and
                                     PHP
                                     8.1. with mail sending function. For deployment to the web hosting
-                                    platform, I used Jenkins' FTP plugin.
-                                    <a href="https://masszazsanikoval.hu"><u>Link: https://masszazsanikoval.hu</u></a>
+                                    platform, I used Jenkins' FTP plugin.</p>
+                                <p><a href="https://masszazsanikoval.hu"><u>Link: https://masszazsanikoval.hu</u></a>
                                 </p>
                                 <p style="color: #e4d5f7">As a freelance PHP developer on online platforms , I have
                                     successfully handled bug

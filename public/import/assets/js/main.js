@@ -386,7 +386,7 @@
      */
 
     let scaleFactor = 1;
-
+   
     function adjustCanvasSize(canvas) {
         if (window.innerWidth <= 768) {
             canvas.width = window.innerWidth;
