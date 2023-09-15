@@ -583,6 +583,14 @@
                                     allowing for continuous deployment of updates to the personal site.<br>
                                     <a href="https://github.com/Rea888/personal_site"><u>Link: personal_site</u></a></p>
 
+                                <p style="color: #65507e"><b><b>Contact Form</b></b></p>
+                                <p style="color: #e4d5f7"> This repository contains a contact page for job application
+                                    purposes. It is
+                                    built using PHP 8.2 and Symfony 6.3 framework. Docker is used for
+                                    containerization, Jenkins for continuous integration, and MariaDB 10.11 for
+                                    the database.<br>
+                                    <a href="https://github.com/Rea888/contact_page"><u>Link: contact_page</u></a></p>
+
                                 <p style="color: #65507e"><b><b>Christmas escape room</b></b></p>
                                 <p style="color: #e4d5f7">The Christmas-themed activity, inspired by the renowned
                                     Cicada3301
@@ -613,20 +621,16 @@
                                     technology and hospitality to enhance the dining experience.<br>
                                     <a href="https://github.com/Rea888/TheWAITerGame"><u>Link: TheWAITerGame</u></a></p>
 
-                                <p style="color: #65507e"><b><b>Discord Bot</b></b></p>
-                                <p style="color: #e4d5f7">In my very first project, I developed a memo/planner bot for
-                                    Discord
-                                    using Java. This bot
-                                    is
-                                    equipped with calendar functions and reminder capabilities, allowing users to
-                                    manage their tasks and schedules within the Discord platform. <br>
-                                    <a href="https://github.com/Rea888/TheWAITerGame"><u>Link: myfirstproject</u></a>
-                                </p>
-
                                 <h3 id="cvh" style="color: #602a70"><u><b>WORK EXPERIENCE</b></u></h3>
                                 <p style="color: #65507e"><b><b>PHP Developer</b></b></p>
                                 <p style="color: #e4d5f7">Private Entrepreneurship · FreelancePrivate<br>
                                     Feb 2022 - Present</p>
+                                <p style="color: #e4d5f7">Developed a website for a massage salon utilizing Laravel9 and
+                                    PHP
+                                    8.1. with mail sending function. For deployment to the web hosting
+                                    platform, I used Jenkins' FTP plugin.
+                                    <a href="https://masszazsanikoval.hu"><u>Link: https://masszazsanikoval.hu</u></a>
+                                </p>
                                 <p style="color: #e4d5f7">As a freelance PHP developer on online platforms , I have
                                     successfully handled bug
                                     fixing,
