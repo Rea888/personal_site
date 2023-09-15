@@ -386,7 +386,7 @@
      */
 
     let scaleFactor = 1;
-   
+
     function adjustCanvasSize(canvas) {
         if (window.innerWidth <= 768) {
             canvas.width = window.innerWidth;
@@ -415,6 +415,7 @@
         offscreenCanvas.width = canvas.width;
         offscreenCanvas.height = canvas.height;
         let offscreenCtx = offscreenCanvas.getContext('2d');
+        let animationFrameId = null;
 
 
         function generateStars() {
@@ -641,11 +642,12 @@
                     let heartImg = i < hearts ? fullHeartImg : emptyHeartImg;
                     ctx.drawImage(heartImg, heartX + i * (heartSize + heartGap), heartY, heartSize, heartSize);
                 }
-                requestAnimationFrame(callback);
+                animationFrameId = requestAnimationFrame(callback);
             }
 
 
             function renderGameOver() {
+                stopGameLoop();
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = '#602a70';
                 ctx.font = '80px Arial';
@@ -676,7 +678,16 @@
             }
         });
 
+        function stopGameLoop() {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        }
+
         restartButton.addEventListener('click', function () {
+            stopGameLoop();
+            stars = [];
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             generateStars();
             initializeGame();
