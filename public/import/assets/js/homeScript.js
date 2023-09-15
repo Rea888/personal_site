@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         requestAnimationFrame(animate);
     }
-
     function createParticle(x, y) {
         const currentTime = new Date().getTime();
 

@@ -73,7 +73,6 @@ function startGame() {
         speed: 3,
         size: 50,
     };
-
     generateStars();
 
     bullets = [];

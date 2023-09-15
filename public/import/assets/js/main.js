@@ -384,7 +384,6 @@
     /**
      * SpaceX game
      */
-
     let scaleFactor = 1;
 
     function adjustCanvasSize(canvas) {

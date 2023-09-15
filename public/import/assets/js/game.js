@@ -14,7 +14,6 @@ let invaders;
 var playerImage = new Image();
 var invaderImage = new Image();
 
-
 playerImage.src = 'import/assets/img/starShip.png';
 invaderImage.src = 'import/assets/img/invader1.png';
 

@@ -26,6 +26,6 @@
     </div>
 </div>
 
-<script src="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/js_mini/game.min.js')}}"></script>
+<script src="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/js/game.min.js')}}"></script>
 </body>
 </html>
