@@ -821,7 +821,7 @@
 <script src="{{ asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/vendor/php-email-form/validate.js')}}"></script>
 
 <!-- Template Main JS File -->
-<script src="{{ asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/js_mini/main.min.js') }}"></script>
+<script src="{{ asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/js/main.js') }}"></script>
 <script src="{{ asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/js_mini/homeScript.min.js') }}"></script>
 
 
