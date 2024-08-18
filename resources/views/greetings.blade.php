@@ -34,15 +34,15 @@
 
 
     <!-- Main CSS File -->
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/about.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/contacts.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/cv.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/hero.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/style.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/navbar.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/screenGame.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/service.css')}}" rel="stylesheet">
-    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/about.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/contacts.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/cv.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/hero.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/navbar.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/screenGame.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/service.min.css')}}" rel="stylesheet">
+    <link href="{{asset(env('BASE_URL') . env('VERSION_HASH'). '/assets/css/style.min.css')}}" rel="stylesheet">
 
     <style>
 

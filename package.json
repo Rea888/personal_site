@@ -2,7 +2,9 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "minify-css": "uglifycss --output public/import/assets/css/style.min.css public/import/assets/css/style.css",
+        "clean-minify-css": "rm -f public/assets/css/review.min.css"
     },
     "devDependencies": {
         "axios": "^1.1.2",
